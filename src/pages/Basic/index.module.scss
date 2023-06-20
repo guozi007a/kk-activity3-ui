@@ -11,6 +11,8 @@
 
         .basic_container {
             flex: auto;
+            box-sizing: border-box;
+            padding: 2rem;
         }
     }
 }

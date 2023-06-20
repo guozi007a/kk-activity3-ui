@@ -11,4 +11,7 @@
     --blue-2: #1677ff;
 
     --shadow-1: 0 0.06rem 1.6rem -0.8rem #00000014, 0 0.9rem 2.8rem #0000000d, 0 1.2rem 4.8rem 1.6rem #00000008;
+    --shadow-2: 0 0 0.2rem 0.1rem var(--gray-4);
+
+    --linear-1: #F6ECE7, #F7E1EA;
 }

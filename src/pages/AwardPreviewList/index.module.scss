@@ -1,0 +1,83 @@
+
+.award_preview_list {
+    position: relative;
+
+    .show {
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0;
+
+        .preview_ul {
+            display: flex;
+            gap: 2rem;
+
+            .preview_li {
+                width: 43rem;
+                height: 16rem;
+                border-radius: 1.4rem;
+                background-color: var(--primary-light);
+                box-shadow: var(--shadow-2);
+                box-sizing: border-box;
+                padding-top: 4rem;
+
+                .inner_main {
+                    width: 100%;
+                    height: 11rem;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                    padding: 0 2rem;
+
+                    .inner_ul {
+                        display: flex;
+                        gap: 2rem;
+
+                        .inner_li {
+                            min-width: 6rem;
+                            flex-shrink: 0;
+
+                            .award_img {
+                                width: 6rem;
+                                height: 6rem;
+                                border-radius: 50%;
+                                background-image: linear-gradient(var(--linear-1));
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+
+                            .award_name {
+                                text-align: center;
+                                font-size: 1.4rem;
+                                margin-top: 0.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .controller {
+        box-sizing: border-box;
+        padding: 1rem;
+        border: 1px solid var(--gray-4);
+        border-radius: 0.8rem;
+        margin-top: 2rem;
+        font-size: 1.4rem;
+
+        table {
+            tr {
+                th, td {
+                    box-sizing: border-box;
+                    padding: 1.6rem;
+                    border-bottom: 1px solid var(--gray-4);
+                    text-align: start;
+                }
+            }
+        }
+    }
+}
