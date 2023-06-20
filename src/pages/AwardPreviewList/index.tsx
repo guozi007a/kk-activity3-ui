@@ -29,6 +29,8 @@ const list = [
 const AwardPreviewList = () => {
 
     const [awardList, setAwardList] = useState<AwardListType>(list)
+    const [direction, setDirection] = useState('row')
+    const [count, setCount] = useState(3)
 
     return <div className={styles.award_preview_list}>
         <TinyTitle1 title='奖励预览列表' />
@@ -36,7 +38,7 @@ const AwardPreviewList = () => {
         <TinyText>本页面在 <TinyTag tag='Web' /> 端展示更佳。</TinyText>
         <TinyTitle2 title='效果展示' />
         <div className={styles.show}>
-            <ul className={styles.preview_ul}>
+            <ul className={`${styles.preview_ul} ${direction === 'column' ? styles.column : ''}`}>
                 {
                     awardList.map((v, i) => {
                         return <li key={i} className={styles.preview_li}>
@@ -45,7 +47,7 @@ const AwardPreviewList = () => {
                                     <ul className={styles.inner_ul}>
                                         {
                                             v && v.map((item, index) => {
-                                                return <li key={index} className={styles.inner_li}>
+                                                return <li key={index} className={`${styles.inner_li} ${v.length > count ? '' : styles.center}`}>
                                                     <div className={styles.award_img}>
                                                         <img src={getImgByUrlOrId(item.url, item.id)} alt="" />
                                                     </div>
@@ -80,13 +82,31 @@ const AwardPreviewList = () => {
                         <td>direction</td>
                         <td>'row' | 'column'</td>
                         <td>'row'</td>
+                        <td>
+                            <label htmlFor="direction1">
+                                <input type="radio" name="direction" id="direction1" value='row' checked={direction === 'row'}
+                                    onChange={(e) => {setDirection(e.target.value)}}
+                                />横排
+                            </label>
+                            <label htmlFor="direction2" style={{marginLeft: '1rem'}}>
+                                <input type="radio" name="direction" id="direction2" value='column' checked={direction === 'column'} 
+                                    onChange={(e) => {setDirection(e.target.value)}}
+                                />竖排
+                            </label>
+                        </td>
                     </tr>
                     <tr>
                         <td>居中排列个数</td>
                         <td>count</td>
                         <td>number</td>
                         <td>3</td>
-                        <td></td>
+                        <td>
+                            <input type="text" value={count}
+                                onChange={e => {
+                                    const val = e.target.value
+                                }}
+                            />
+                        </td>
                         <td>礼物个数小于等于count时，居中排列</td>
                     </tr>
                     <tr>

@@ -11,6 +11,10 @@
             display: flex;
             gap: 2rem;
 
+            &.column {
+                flex-direction: column;
+            }
+
             .preview_li {
                 width: 43rem;
                 height: 16rem;
