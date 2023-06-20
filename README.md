@@ -1,2 +1,2 @@
 # kk-activity3-ui
-kk-ui for activity3
+kk-ui for activity3.
