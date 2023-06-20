@@ -1,0 +1,64 @@
+
+$gitpx: 3.2rem;
+
+.common_header {
+    height: 6rem;
+    box-sizing: border-box;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 0.6rem 0.2rem var(--gray-1);
+
+    .sit {
+        width: $gitpx;
+        height: $gitpx;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .search {
+        width: 24.2rem;
+        height: 2.2rem;
+        display: flex;
+        align-items: center;
+
+        .search_icon {
+            width: 1.8rem;
+            height: 1.8rem;
+
+            svg {
+                width: 100%;
+                height: 100%;
+                fill: var(--gray-3);
+            }
+        }
+
+        .search_inp {
+            flex: auto;
+            box-sizing: border-box;
+            padding: 0 1.2rem;
+            font-size: 1.4rem;
+
+            &::-webkit-input-placeholder  {
+                color: var(--gray-3);
+            }
+            &:-ms-input-placeholder {
+                color: var(--gray-3);
+            }
+        }
+    }
+
+    .link {
+        display: block;
+        width: $gitpx;
+        height: $gitpx;
+        border-radius: 50%;
+        overflow: hidden;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

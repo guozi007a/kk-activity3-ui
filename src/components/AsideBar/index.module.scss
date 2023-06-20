@@ -1,0 +1,82 @@
+
+$paddingleft: 2.5rem;
+
+.asidebar {
+    position: relative;
+    width: 26rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-right: 1px solid var(--gray-1);
+    padding: 2rem 1rem;
+    user-select: none;
+    overflow: hidden;
+
+    .aside_logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        box-sizing: border-box;
+        padding-left: $paddingleft;
+        height: 6rem;
+        cursor: pointer;
+
+        .logo_img {
+            width: 4rem;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .logo_text {
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-family: AlibabaPuHuiTi,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji',sans-serif;
+            white-space: nowrap;
+        }
+    }
+
+    .aside_main {
+        flex: auto;
+        margin-top: 2rem;
+        
+        .aside_ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+
+            .aside_li {
+                height: 4rem;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                padding-left: $paddingleft;
+                border-radius: 0.6rem;
+                cursor: pointer;
+
+                .component_text {
+                    white-space: nowrap;
+                    font-size: 1.4rem;
+
+                    span {
+                        margin-right: 0.5rem;
+                    }
+                }
+
+                &:hover {
+                    background-color: var(--gray-2);
+                }
+
+                &.active {
+                    background-color: var(--blue-1);
+                    
+                    .component_text {
+                        color: var(--blue-2);
+                    }
+                }
+            }
+        }
+    }
+}

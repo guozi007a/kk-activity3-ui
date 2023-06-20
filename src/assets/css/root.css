@@ -1,3 +1,10 @@
 :root {
     --primary-dark: #1F2328;
+
+    --gray-1: rgba(5, 5, 5, 0.06);
+    --gray-2: rgba(0, 0, 0, 0.06);
+    --gray-3: #ced4d9;
+
+    --blue-1: #e6f4ff;
+    --blue-2: #1677ff;
 }

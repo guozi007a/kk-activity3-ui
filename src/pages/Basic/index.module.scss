@@ -1,0 +1,16 @@
+.basic {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+
+    .basic_main {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+
+        .basic_container {
+            flex: auto;
+        }
+    }
+}
