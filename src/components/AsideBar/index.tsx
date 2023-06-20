@@ -4,11 +4,13 @@ import { logo3 } from '~/config/imgUrl.config'
 import { asideComponents } from '~/config/asideComponents.config'
 import { useState, useEffect } from 'react'
 import useLocalPath from '~/hooks/useLocalPath'
+import { useNavigate } from 'react-router-dom'
 
 const AsideBar = () => {
 
     const path = useLocalPath()
     const [asideIndex, setAsideIndex] = useState(-1)
+    const navigate = useNavigate()
 
     useEffect(() => { 
         const index = asideComponents.findIndex(v => `/${v.route}` === path)
@@ -31,6 +33,7 @@ const AsideBar = () => {
                         return <li key={i} className={`${styles.aside_li} ${asideIndex === i ? styles.active : ''}`}
                             onClick={() => {
                                 setAsideIndex(i)
+                                navigate(`/${v.route}`)
                             }}
                         >
                             <p className={styles.component_text}>

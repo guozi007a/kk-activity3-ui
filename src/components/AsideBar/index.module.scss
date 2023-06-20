@@ -1,4 +1,4 @@
-
+$media-width1: 1080px;
 $paddingleft: 2.5rem;
 
 .asidebar {
@@ -7,11 +7,13 @@ $paddingleft: 2.5rem;
     height: 100%;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     box-sizing: border-box;
     border-right: 1px solid var(--gray-1);
     padding: 2rem 1rem;
     user-select: none;
     overflow: hidden;
+    transition: all .3s;
 
     .aside_logo {
         display: flex;
@@ -78,5 +80,11 @@ $paddingleft: 2.5rem;
                 }
             }
         }
+    }
+
+    @media screen and (max-width: $media-width1) {
+        width: 0rem;
+        padding: 0rem;
+        transition: all .3s;
     }
 }

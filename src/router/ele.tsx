@@ -4,6 +4,7 @@ import { gaurd } from './Gaurd'
 
 const Basic = lazy(() => import('~/pages/Basic'))
 const OverView = lazy(() => import('~/pages/OverView'))
+const AwardPreviewList = lazy(() => import('~/pages/AwardPreviewList'))
 
 export const ele: RouteObject[] = [
     {
@@ -13,7 +14,11 @@ export const ele: RouteObject[] = [
             {
                 path: 'overview',
                 element: gaurd(OverView)
-            }
+            },
+            {
+                path: 'award-preview-list',
+                element: gaurd(AwardPreviewList)
+            },
         ]
     },
     {

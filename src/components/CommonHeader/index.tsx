@@ -9,7 +9,7 @@ const CommonHeader = () => {
             <div className={styles.search_icon}>
                 <AliIcon icon='icon-sousuo' />
             </div>
-            <input type="text" placeholder='收入关键字搜索..' className={styles.search_inp} />
+            <input type="text" placeholder='输入关键字搜索..' className={styles.search_inp} />
         </div>
         <a href="https://github.com/guozi007a/kk-activity3-ui" target='_blank' className={styles.link} title='to github'>
             <AliIcon icon='icon-github' />
