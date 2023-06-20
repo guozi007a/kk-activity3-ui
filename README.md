@@ -9,3 +9,4 @@ npm i
 ```js
 npm run dev
 ```
+This project is running at `http://localhost:3001/`
