@@ -3,6 +3,7 @@ import styles from './index.module.scss'
 import { TinyTitle1, TinyText, TinyTag, TinyGrid } from '~/components/Tinys'
 import { viewComponents } from '~/config/allComponents.config'
 import { useNavigate } from 'react-router-dom'
+import { Scrollbars } from 'react-custom-scrollbars-2'
 
 const OverView = () => {
 
@@ -15,21 +16,23 @@ const OverView = () => {
         </TinyText>
         <main className={styles.views}>
             <section className={styles.views_container}>
-                <ul className={styles.views_ul}>
-                    {
-                        viewComponents.map((v, i) => {
-                            return <li key={i} className={styles.views_li}
-                                onClick={() => {navigate(`/${v.route}`)}}
-                            >
-                                <TinyGrid
-                                    component={v.component}
-                                    name={v.name}
-                                    url={v.url}
-                                />
-                            </li>
-                        })
-                    }
-                </ul>
+                <Scrollbars autoHide>
+                    <ul className={styles.views_ul}>
+                        {
+                            viewComponents.map((v, i) => {
+                                return <li key={i} className={styles.views_li}
+                                    onClick={() => {navigate(`/${v.route}`)}}
+                                >
+                                    <TinyGrid
+                                        component={v.component}
+                                        name={v.name}
+                                        url={v.url}
+                                    />
+                                </li>
+                            })
+                        }
+                    </ul>
+                </Scrollbars>
             </section>
         </main>
     </div>

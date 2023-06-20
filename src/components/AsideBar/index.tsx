@@ -3,8 +3,8 @@ import styles from './index.module.scss'
 import { logo3 } from '~/config/imgUrl.config'
 import { asideComponents } from '~/config/asideComponents.config'
 import { useState, useEffect } from 'react'
-import useLocalPath from '~/hooks/useLocalPath'
 import { useNavigate } from 'react-router-dom'
+import useLocalPath from '~/hooks/useLocalPath'
 
 const AsideBar = () => {
 

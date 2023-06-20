@@ -7,7 +7,7 @@ const useLocalPath = () => {
     useEffect(() => { 
         const localPath = location.pathname
         setPath(localPath ?? '')
-    }, [path])
+    }, [location.pathname])
 
     return path
 }

@@ -5,13 +5,20 @@ $media-width3: 830px;
     position: relative;
     box-sizing: border-box;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 
     .views {
         margin-top: 2rem;
+        flex: auto;
 
         .views_container {
+            position: relative;
+            height: 100%;
             box-sizing: border-box;
             padding: 0 2rem;
+            overflow: hidden;
 
             .views_ul {
                 display: flex;
@@ -47,10 +54,10 @@ $media-width3: 830px;
     @media screen and (max-width: $media-width3) {
         .views {
             .views_container {
-                padding: 0 1rem;
+                padding: 0;
 
                 .views_ul {
-                    width: 100%;
+                    width: 96%;
 
                     .views_li {
                         width: calc((100% - 2rem) / 2);

@@ -3,6 +3,7 @@ $gitpx: 3.2rem;
 
 .common_header {
     height: 6rem;
+    flex-shrink: 0;
     box-sizing: border-box;
     padding: 0 2rem;
     display: flex;
