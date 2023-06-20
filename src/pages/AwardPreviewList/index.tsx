@@ -69,8 +69,8 @@ const AwardPreviewList = () => {
                         <th>字段表示</th>
                         <th>字段名称</th>
                         <th>数据类型</th>
-                        <th>修改值</th>
-                        <th>其他操作</th>
+                        <th>默认值</th>
+                        <th>控制操作</th>
                         <th>备注</th>
                     </tr>
                 </thead>
@@ -79,13 +79,13 @@ const AwardPreviewList = () => {
                         <td>排列方式</td>
                         <td>direction</td>
                         <td>'row' | 'column'</td>
-                        <td></td>
+                        <td>'row'</td>
                     </tr>
                     <tr>
                         <td>居中排列个数</td>
                         <td>count</td>
                         <td>number</td>
-                        <td></td>
+                        <td>3</td>
                         <td></td>
                         <td>礼物个数小于等于count时，居中排列</td>
                     </tr>
@@ -111,7 +111,7 @@ const AwardPreviewList = () => {
                         <td>添加奖励</td>
                         <td>award</td>
                         <td>AwardsType</td>
-                        <td></td>
+                        <td>[ ]</td>
                     </tr>
                 </tbody>
             </table>
