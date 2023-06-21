@@ -16,7 +16,7 @@ const ViewCode = ({ codes }: PropType) => {
             onClick={() => {
                 setIsVisible(!isVisible)
             }}
-        >查看代码</span>
+        >{isVisible ? '隐藏' : '查看'}代码</span>
         <div className={`${styles.codes} ${isVisible ? styles.active : ''}`}>
             {
                 codes && codes.map((v, i) => {
