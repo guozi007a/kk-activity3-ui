@@ -177,7 +177,7 @@ const AwardPreviewList = () => {
                                     <td>上边距</td>
                                     <td>paddingTop</td>
                                     <td>number</td>
-                                    <td>40</td>
+                                    <td>50</td>
                                     <td>
                                         <input type="text" value={paddingTop}
                                             onChange={e => {
