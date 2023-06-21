@@ -1,11 +1,12 @@
-```js
 // react code
+const reactCode = `
+\`\`\`tsx
 import React from 'react'
 import './app.less'
 
 const getImg = (url, id) => {
     if (url) return url
-    if (id) return `https://rescdn.kktv8.com/kktv/icon/web/gift/png_80/${id}.png`
+    if (id) return \`https://rescdn.kktv8.com/kktv/icon/web/gift/png_80/\${id}.png\`
     return ''
 }
 
@@ -31,16 +32,16 @@ const previewList = [
  */
 const App = ({ direction, count = 5 }) => {
     return <div className="preview_container">
-        <ul className={`preview_ul ${direction ?? ''}`}>
+        <ul className={\`preview_ul \${direction ?? ''}\`}>
             {
                 previewList.map((v, i) => {
-                    return <li key={i} className={`preview_li preview_li_${i + 1}`}>
+                    return <li key={i} className={\`preview_li preview_li_\${i + 1}\`}>
                         <div className="preview_main">
                             <div className='preview_inner'>
-                                <ul className={`preview_item_ul ${v.length > count ? '' : 'center'}`}>
+                                <ul className={\`preview_item_ul \${v.length > count ? '' : 'center'}\`}>
                                     {
                                         v && v.map((item, index) => {
-                                            return <li key={index} className={`preview_item preview_item_${index + 1}`}>
+                                            return <li key={index} className={\`preview_item preview_item_\${index + 1}\`}>
                                                 <div className='preview_img'>
                                                     <img src={getImg(item.url, item.id)} alt="" />
                                                 </div>
@@ -59,10 +60,11 @@ const App = ({ direction, count = 5 }) => {
 }
 
 export default App
-```
+\`\`\`
+`
 
-```less
-// less code
+const lessCode = `
+\`\`\`less
 .setbg(@url) {
 	background-image: url('https://rescdn.kktv8.com/kk-web-res/activity3/play_2375/@{url}');
 	background-repeat: no-repeat;
@@ -177,4 +179,7 @@ export default App
         }
     }
 }
-```
+\`\`\`
+`
+
+export const awardCodes = [reactCode, lessCode]

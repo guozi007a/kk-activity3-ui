@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { getImgByUrlOrId } from '~/utils/kkUtils'
 import { Scrollbars } from 'react-custom-scrollbars-2'
 import ViewCode from '~/components/ViewCode'
+import { awardCodes } from '~/config/awardPreviewCode'
 
 interface AwardsType {
     name?: string
@@ -197,7 +198,7 @@ const AwardPreviewList = () => {
                             </tbody>
                         </table>
                     </div>
-                    <ViewCode file='AwardPreviewList' />
+                    <ViewCode codes={awardCodes} />
                 </Scrollbars>
             </div>
         </div>
