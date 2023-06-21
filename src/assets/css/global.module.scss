@@ -1,0 +1,41 @@
+// 控制器
+@mixin controller {
+    box-sizing: border-box;
+    padding: 1rem;
+    border: 1px solid var(--gray-4);
+    border-radius: 0.8rem;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+
+    table {
+        tr {
+            th, td {
+                box-sizing: border-box;
+                padding: 1.6rem;
+                border-bottom: 1px solid var(--gray-4);
+                text-align: start;
+
+                input[type="text"] {
+                    width: 8rem;
+                    box-sizing: border-box;
+                    border: 1px solid var(--gray-4);
+                    padding: 0 1rem;
+                }
+
+                button {
+                    color: var(--primary-light);
+                    background-color: var(--blue-2);
+                    border-radius: 0.4rem;
+                    box-shadow: var(--shadow-3);
+                    font-size: 1.4rem;
+                    padding: 0.2rem 0.5rem;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: var(--blue-3);
+                    }
+                }
+            }
+        }
+    }
+}

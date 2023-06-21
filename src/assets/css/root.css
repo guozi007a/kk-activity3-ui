@@ -9,9 +9,11 @@
 
     --blue-1: #e6f4ff;
     --blue-2: #1677ff;
+    --blue-3: #4096ff;
 
     --shadow-1: 0 0.06rem 1.6rem -0.8rem #00000014, 0 0.9rem 2.8rem #0000000d, 0 1.2rem 4.8rem 1.6rem #00000008;
     --shadow-2: 0 0 0.2rem 0.1rem var(--gray-4);
+    --shadow-3: 0 2px 0 rgba(5,145,255,.1);
 
     --linear-1: #F6ECE7, #F7E1EA;
 }

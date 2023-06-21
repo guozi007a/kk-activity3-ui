@@ -30,6 +30,9 @@ input, button {
 a {
     text-decoration: none;
 }
+a:-webkit-any-link {
+   color: var(--primary-dark); 
+}
 .hide {
     display: none !important;
 }

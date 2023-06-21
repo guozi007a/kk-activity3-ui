@@ -1,0 +1,21 @@
+
+.viewcode {
+    display: inline-block;
+    margin: 2rem 0;
+    user-select: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.6rem;
+    letter-spacing: 0.2rem;
+    border: 1px solid var(--gray-4);
+    transition: all .3s;
+
+    &:hover {
+        border: 1px solid var(--blue-2);
+        color: var(--blue-2);
+        transition: all .3s;
+    }
+}
+
