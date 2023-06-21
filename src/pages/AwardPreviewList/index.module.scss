@@ -1,5 +1,12 @@
 @use '~/assets/css/global.module' as scss;
 
+@mixin setbg($url) {
+	background-image: url('https://rescdn.kktv8.com/kk-web-res/activity3/play_2375/#{$url}');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+}
+
 .award_preview_list {
     position: relative;
     height: 100%;
@@ -33,12 +40,19 @@
                         background-color: var(--primary-light);
                         box-shadow: var(--shadow-2);
                         box-sizing: border-box;
-                        padding-top: 4rem;
+                        padding-top: 5rem;
                         overflow: hidden;
-        
+
+                        &.preview_li_1 {
+                            @include setbg('w-zhanshi1.png');
+                        }
+                        &.preview_li_2 {
+                            @include setbg('w-zhanshi2.png');
+                        }
+
                         .inner_main {
                             width: 100%;
-                            height: 11rem;
+                            height: 10rem;
                             overflow: hidden;
                             box-sizing: border-box;
                             padding: 0 2rem;

@@ -34,7 +34,7 @@ const AwardPreviewList = () => {
     const [count, setCount] = useState('3')
     const [width, setWidth] = useState('430')
     const [height, setHeight] = useState('160')
-    const [paddingTop, setPaddingTop] = useState('40')
+    const [paddingTop, setPaddingTop] = useState('50')
 
     const handleAdd = (order: number) => {
         const newList = awardList.map((v, i) => {
@@ -60,14 +60,18 @@ const AwardPreviewList = () => {
                         <ul className={`${styles.preview_ul} ${direction === 'column' ? styles.column : ''}`}>
                             {
                                 awardList.map((v, i) => {
-                                    return <li key={i} className={styles.preview_li}
+                                    return <li key={i} className={`${styles.preview_li} ${styles[`preview_li_${i + 1}`]}`}
                                         style={{
                                             width: `${width ? parseInt(width) / 10 : 0}rem`,
                                             height: `${height ? parseInt(height) / 10 : 0}rem`,
                                             paddingTop: `${paddingTop ? parseInt(paddingTop) / 10 : 0}rem`,
                                         }}
                                     >
-                                        <div className={styles.inner_main}>
+                                        <div className={styles.inner_main}
+                                            style={{
+                                                height: `${((height ? parseInt(height) : 0) - (paddingTop ? parseInt(paddingTop) : 0) - 10) / 10}rem`,
+                                            }}
+                                        >
                                             <Scrollbars autoHide>
                                                 <ul className={`${styles.inner_ul} ${v.length > (count ? parseInt(count) : 0) ? '' : styles.center}`}>
                                                     {
