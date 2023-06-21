@@ -197,7 +197,7 @@ const AwardPreviewList = () => {
                             </tbody>
                         </table>
                     </div>
-                    <ViewCode />
+                    <ViewCode file='AwardPreviewList' />
                 </Scrollbars>
             </div>
         </div>
