@@ -29,12 +29,15 @@ const Popup = () => {
             <Tiny.TinyTitle2 title='效果展示' />
             <button className={styles.btn} onClick={handleOpen}>打开弹出框</button>
             <Tiny.TinyTitle2 title='控制器' />
+            <div className={styles.controller}></div>
         </Scrollbars>
         <Dialog
             isOpen={isVisible}
             onClose={handleClose}
         >
-            <div className={styles.cont}></div>
+            <div className={styles.cont}>
+                <Tiny.TinyTitle2 title='欢迎使用Dialog ！' />
+            </div>
         </Dialog>
     </div>
 }
