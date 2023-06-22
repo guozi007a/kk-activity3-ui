@@ -1,0 +1,35 @@
+@use '~/assets/css/global.module' as scss;
+
+.popup {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    user-select: none;
+
+    .btn {
+        box-sizing: border-box;
+        padding: 0.5rem 1.5rem;
+        background-color: var(--blue-2);
+        color: var(--primary-light);
+        border-radius: 0.6rem;
+        margin: 2rem 0;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--blue-3);
+        }
+    }
+
+    .controller {
+        @include scss.controller;
+    }
+}
+
+.cont {
+    width: 400px;
+    height: 500px;
+    background-color: var(--primary-light);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    border: 1px solid var(--gray-4);
+}
