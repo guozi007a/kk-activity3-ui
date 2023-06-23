@@ -4,10 +4,13 @@ import * as Tiny from '~/components/Tinys'
 import Dialog from '~/components/Dialog'
 import { Scrollbars } from 'react-custom-scrollbars-2'
 import { useState } from 'react'
+import Controller from '~/components/Controller'
 
 const Popup = () => {
 
     const [isVisible, setIsVisible] = useState(false)
+    const [isMaskEnable, setIsMaskEnable] = useState(true)
+    const [isShowCloseIcon, setIsShowCloseIcon] = useState(true)
 
     const handleOpen = () => {
         setIsVisible(true)
@@ -29,11 +32,62 @@ const Popup = () => {
             <Tiny.TinyTitle2 title='效果展示' />
             <button className={styles.btn} onClick={handleOpen}>打开弹出框</button>
             <Tiny.TinyTitle2 title='控制器' />
-            <div className={styles.controller}></div>
+            <Controller>
+                <tbody>
+                    <tr>
+                        <td>点击遮罩是否关闭弹框</td>
+                        <td>isMaskClickEnable</td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>
+                            <label htmlFor="mask1">
+                                <input type="radio" name='mask' id='mask1' checked={isMaskEnable}
+                                    onChange={() => {setIsMaskEnable(true)}}
+                                />
+                                <span>是</span>
+                            </label>
+                            <label htmlFor="mask2">
+                                <input type="radio" name='mask' id='mask2' checked={!isMaskEnable}
+                                    onChange={() => {setIsMaskEnable(false)}}
+                                />
+                                <span>否</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>是否显示关闭按钮</td>
+                        <td>isShowCloseIcon</td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>
+                            <label htmlFor="closeicon1">
+                                <input type="radio" name='closeicon' id='closeicon1' checked={isShowCloseIcon}
+                                    onChange={() => {setIsShowCloseIcon(true)}}
+                                />
+                                <span>是</span>
+                            </label>
+                            <label htmlFor="closeicon2">
+                                <input type="radio" name='closeicon' id='closeicon2' checked={!isShowCloseIcon}
+                                    onChange={() => {setIsShowCloseIcon(false)}}
+                                />
+                                <span>否</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>按钮图标</td>
+                        <td>closeIcon</td>
+                        <td>string</td>
+                        <td>'icon-close1'</td>
+                    </tr>
+                </tbody>
+            </Controller>
         </Scrollbars>
         <Dialog
             isOpen={isVisible}
             onClose={handleClose}
+            isMaskClickEnable={isMaskEnable}
+            isShowCloseIcon={isShowCloseIcon}
         >
             <div className={styles.cont}>
                 <Tiny.TinyTitle2 title='欢迎使用Dialog ！' />

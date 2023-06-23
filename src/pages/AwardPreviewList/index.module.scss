@@ -1,4 +1,3 @@
-@use '~/assets/css/global.module' as scss;
 
 @mixin setbg($url) {
 	background-image: url('https://rescdn.kktv8.com/kk-web-res/activity3/play_2375/#{$url}');
@@ -95,10 +94,6 @@
                         }
                     }
                 }
-            }
-        
-            .controller {
-                @include scss.controller;
             }
         }
     }

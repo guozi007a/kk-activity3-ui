@@ -1,4 +1,3 @@
-@use '~/assets/css/global.module' as scss;
 
 .popup {
     position: relative;
@@ -18,10 +17,6 @@
         &:hover {
             background-color: var(--blue-3);
         }
-    }
-
-    .controller {
-        @include scss.controller;
     }
 }
 
