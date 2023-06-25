@@ -41,3 +41,13 @@ interface TinyTagType {
 export const TinyTag = ({ tag }: TinyTagType) => {
     return <code className={styles.tinytag}>{tag}</code>
 }
+
+interface TinyImgType {
+    url?: string
+    position?: 'left' | 'center' | 'right'
+}
+export const TinyImg = ({ url, position = 'left' }: TinyImgType) => {
+    return <div className={styles.tinyimg} style={{textAlign: position}}>
+        <img src={url} alt="" />
+    </div>
+}

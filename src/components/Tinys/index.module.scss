@@ -71,3 +71,18 @@
     border: 1px solid var(--gray-1);
     border-radius: 0.4rem;
 }
+
+.tinyimg {
+    box-sizing: border-box;
+    padding: 2rem 0;
+    font-size: 0;
+
+    img {
+        width: 100%;
+        max-width: 66rem;
+        max-height: 33rem;
+        border: 1px solid var(--gray-1);
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+}
