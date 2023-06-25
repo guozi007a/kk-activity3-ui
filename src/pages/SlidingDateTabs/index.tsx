@@ -40,6 +40,11 @@ const SlidingDateTabs = () => {
             <div className={styles.result_wrap}>
                 <DateSwitchTabs />
             </div>
+            <Tiny.TinyTitle2 title='控制器' />
+            <Controller>
+                <tbody></tbody>
+            </Controller>
+            <ViewCode />
         </Scrollbars>
     </div>
 }

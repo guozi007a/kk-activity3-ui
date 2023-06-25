@@ -7,10 +7,16 @@
     --gray-3: #ced4d9;
     --gray-4: #f0f0f0;
     --gray-5: rgba(0, 0, 0, .6);
+    --gray: gray;
 
     --blue-1: #e6f4ff;
     --blue-2: #1677ff;
     --blue-3: #4096ff;
+    --blue-4: #c6e6ff;
+
+    --cyan-1: #53d0ff;
+    --cyan-2: #bee3f8;
+    --cyan-3: #8de0ff;
 
     --shadow-1: 0 0.06rem 1.6rem -0.8rem #00000014, 0 0.9rem 2.8rem #0000000d, 0 1.2rem 4.8rem 1.6rem #00000008;
     --shadow-2: 0 0 0.2rem 0.1rem var(--gray-4);

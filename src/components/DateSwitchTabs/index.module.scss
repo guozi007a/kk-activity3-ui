@@ -1,0 +1,67 @@
+.date_switch_tabs {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .pre,
+    .next {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: var(--cyan-2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        svg {
+            width: 1.6rem;
+            height: 1.6rem;
+            fill: var(--primary-light);
+        }
+
+        &.active {
+            background-color: var(--cyan-1);
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--cyan-3);
+            }
+        }
+    }
+
+    .tabs_main {
+        position: relative;
+        overflow: hidden;
+        height: 6rem;
+
+        .tabs_ul {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin-left: 0;
+            transition: margin-left .3s;
+
+            .tab {
+                flex-shrink: 0;
+                box-sizing: border-box;
+                box-shadow: var(--shadow-2);
+                border-radius: 0.6rem;
+                text-align: center;
+                cursor: pointer;
+                transition: all .3s;
+
+                &.active {
+                    background-image: linear-gradient(to right, var(--cyan-2), var(--cyan-1));
+                    color: var(--primary-light);
+                    transition: all .3s;
+                }
+
+                &:hover {
+                    box-shadow: 0 0 0.6rem 0.2rem var(--cyan-2);
+                    transform: scale(1.1);
+                    transition: all .3s;
+                }
+            }
+        }
+    }
+}
