@@ -5,6 +5,8 @@ import Dialog from '~/components/Dialog'
 import { Scrollbars } from 'react-custom-scrollbars-2'
 import { useState } from 'react'
 import Controller from '~/components/Controller'
+import ViewCode from '~/components/ViewCode'
+import { popupCodes } from '~/config/popupCodes'
 
 const Popup = () => {
 
@@ -82,6 +84,7 @@ const Popup = () => {
                     </tr>
                 </tbody>
             </Controller>
+            <ViewCode codes={popupCodes} />
         </Scrollbars>
         <Dialog
             isOpen={isVisible}

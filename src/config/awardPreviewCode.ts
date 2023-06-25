@@ -1,6 +1,6 @@
 // react code
 const reactCode = `
-\`\`\`tsx
+\`\`\`jsx
 import React from 'react'
 import './app.less'
 
