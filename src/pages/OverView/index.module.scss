@@ -1,5 +1,6 @@
 $media-width2: 1400px;
 $media-width3: 830px;
+$media-width4: 650px;
 
 .overview {
     position: relative;
@@ -59,6 +60,21 @@ $media-width3: 830px;
 
                     .views_li {
                         width: calc((100% - 2rem) / 2);
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $media-width4) {
+        .views {
+            .views_container {
+                padding: 0;
+
+                .views_ul {
+                    width: 96%;
+
+                    .views_li {
+                        width: 100%;
                     }
                 }
             }
