@@ -22,6 +22,10 @@ const SlidingDateTabs = () => {
             <Tiny.TinyText>
                 <Tiny.TinyTag tag='sliding date tabs' />依赖时间转换库，如<Tiny.TinyTag tag='day.js' />。当然，这也可以通过手动工具来完成。
             </Tiny.TinyText>
+            <Tiny.TinyTitle2 title='何时使用' />
+            <Tiny.TinyText>
+                当需求中出现需要切换日期时即可使用。
+            </Tiny.TinyText>
             <Tiny.TinyTitle2 title='效果展示' />
             <div className={styles.result_wrap}>
                 <DateSwitchTabs />
