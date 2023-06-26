@@ -2,12 +2,18 @@
 import styles from './index.module.scss'
 import AliIcon from '~/components/AliIcon'
 import dayjs from 'dayjs'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // 一天时间转换成毫秒数
 const D2MS = 24 * 60 * 60 * 1000
 // 当前时间戳
 const NOW = Date.now()
+
+export interface ParamType {
+    index?: number
+    date?: string
+    text?: string
+}
 
 type PropType = {
     // tab宽度
@@ -24,16 +30,19 @@ type PropType = {
     end?: number,
     // 活动天数限制
     limits?: number
+    // 获取tab日期数据，如index, date, text等
+    onDate?: (param?: ParamType) => void
 }
 
 const DateSwitchTabs = ({
-    tabWidth = 100, // 默认100px
+    tabWidth = 120, // 默认120px
     tabHeight = 40, // 默认40px
     gap = 20, // 默认20px
     count = 5, // 默认5个
     start = 1687489200000, // 默认'2023/06/23 11:00'
     end = 1688227200000, // 默认'2023/07/02 00:00:00'
     limits = 30, // 默认30天
+    onDate,
 }: PropType) => {
 
     if (start >= end) {
@@ -46,24 +55,27 @@ const DateSwitchTabs = ({
         console.error('可显示数量过少，请检查配置！')
     }
 
-    // tab个数
+    // tab总数量
     const TABS_COUNT = Math.ceil((end - start) / D2MS)
     if (TABS_COUNT > limits) {
         console.error('活动时间持续过长，时间配置可能有误，请检查配置！')
     }
     // 当前日期对应的tabIndex
     const getIndex = () => {
-        const _start = new Date(dayjs(start + D2MS).format('YYYY/MM/DD')).getTime()
+        const _start = new Date(dayjs(start! + D2MS).format('YYYY/MM/DD')).getTime()
         if (NOW < _start) return 0
-        if (NOW > (end - D2MS)) return TABS_COUNT - 1
+        if (NOW > (end! - D2MS)) return TABS_COUNT - 1
         return Math.ceil((NOW - _start) / D2MS)
     }
 
     const [tabIndex, setTabIndex] = useState(getIndex())
 
+    // tab和间距总宽度
     const TAB_WIDTH = tabWidth + gap
+    // 标签外容器宽度
     const MAIN_WIDTH = tabWidth * count + (count - 1) * gap
-    const TAB_LIST = []
+    // 向标签中注入数据
+    const TAB_LIST: ParamType[] = []
     for (let i = 0; i < TABS_COUNT; i++) {
         const dateObj = {
             text: dayjs(start + D2MS * i).format('M月D日'),
@@ -88,6 +100,14 @@ const DateSwitchTabs = ({
         if(tabIndex >= (TABS_COUNT - MIDDLE_INDEX)) return - (TABS_COUNT - count) * TAB_WIDTH
         return - TAB_WIDTH * (tabIndex - MIDDLE_INDEX)
     }
+
+    useEffect(() => { 
+        const param = {
+            index: tabIndex,
+            ...TAB_LIST[tabIndex]
+        }
+        onDate && onDate(param)
+    }, [tabIndex])
 
     return <div className={styles.date_switch_tabs}>
         <div className={`${styles.pre} ${tabIndex <= 0 ? '' : styles.active}`} onClick={handlePre}>

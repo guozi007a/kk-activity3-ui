@@ -16,10 +16,12 @@
                 text-align: start;
 
                 input[type="text"] {
-                    width: 8rem;
+                    width: 14rem;
+                    height: 2.8rem;
                     box-sizing: border-box;
-                    border: 1px solid var(--gray-4);
                     padding: 0 1rem;
+                    box-shadow: 0 0 0.2rem 0.1rem var(--blue-3);
+                    border-radius: 0.6rem;
                 }
 
                 label {
@@ -32,7 +34,7 @@
                     border-radius: 0.4rem;
                     box-shadow: var(--shadow-3);
                     font-size: 1.4rem;
-                    padding: 0.2rem 0.5rem;
+                    padding: 0.4rem 1.2rem;
                     cursor: pointer;
 
                     &:hover {

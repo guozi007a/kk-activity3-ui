@@ -9,3 +9,6 @@ export const getImgByUrlOrId = (url?: string, id?: number): string => {
     if (url) return url
     return getImgById(id)
 }
+
+// 设备是否为手机端
+export const isMobile = /Android|webOS|iPhone|iPod|BlackBerry|ipad/i.test(navigator.userAgent);
