@@ -214,7 +214,7 @@ const SlidingDateTabs = () => {
                     <td>获取tab日期数据</td>
                     <td>onDate</td>
                     <td>{'(param?: ParamType) => void'}</td>
-                    <td>null</td>
+                    <td>-</td>
                     <td></td>
                     <td>操作tab时打开控制台即可看到日期数据</td>
                 </tr>

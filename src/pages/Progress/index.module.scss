@@ -2,5 +2,9 @@
 .progress {
     .container {
         margin: 2rem 0;
+
+        &.real {
+            margin-left: 4rem;
+        }
     }
 }

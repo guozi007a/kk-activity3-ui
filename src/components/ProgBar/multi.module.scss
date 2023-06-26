@@ -1,0 +1,40 @@
+
+.prog_multi {
+    position: relative;
+    height: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--gray-2);
+
+    .prog {
+        position: relative;
+        width: 0%;
+        height: 100%;
+        border-radius: 0.5rem;
+        background-color: var(--red-1);
+        transition: all .3s;
+    }
+
+    @keyframes shake {
+        0% {}
+        25% {transform: rotate(5deg);}
+        50% {transform: rotate(0deg);}
+        75% {transform: rotate(-5deg);}
+        100% {transform: rotate(0deg);}
+    }
+
+    .award {
+        position: absolute;
+        z-index: 1;
+        bottom: -0.2rem;
+        width: 3rem;
+        height: 2.9rem;
+        background: url('https://rescdn.kktv8.com/kk-web-res/activity3/play_2368/b-page1-qianjingeshu-moren.png') center center no-repeat;
+        background-size: 100% 100%;
+
+        &.active {
+            background-image: url('https://rescdn.kktv8.com/kk-web-res/activity3/play_2368/b-page1-qianjingeshu-keling.png');
+            animation: shake .3s infinite;
+            cursor: pointer;
+        }
+    }
+}
