@@ -13,6 +13,13 @@
             flex: auto;
             box-sizing: border-box;
             padding: 2rem;
+
+            .basic_inner {
+                position: relative;
+                height: 100%;
+                overflow: hidden;
+                user-select: none;
+            }
         }
     }
 }

@@ -7,6 +7,7 @@ const OverView = lazy(() => import('~/pages/OverView'))
 const AwardPreviewList = lazy(() => import('~/pages/AwardPreviewList'))
 const Popup = lazy(() => import('~/pages/Popup'))
 const SlidingDateTabs = lazy(() => import('~/pages/SlidingDateTabs'))
+const Badge = lazy(() => import('~/pages/Badge'))
 
 export const ele: RouteObject[] = [
     {
@@ -28,6 +29,10 @@ export const ele: RouteObject[] = [
             {
                 path: 'sliding-date-tabs',
                 element: gaurd(SlidingDateTabs)
+            },
+            {
+                path: 'badge',
+                element: gaurd(Badge)
             },
         ]
     },

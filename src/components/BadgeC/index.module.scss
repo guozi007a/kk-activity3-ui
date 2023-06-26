@@ -1,0 +1,23 @@
+
+.badge {
+    position: absolute;
+    z-index: 1;
+    top: -1rem;
+    right: -1rem;
+    display: inline-block;
+    min-width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    line-height: 2rem;
+    color: var(--primary-light);
+    background-color: var(--red-1);
+    font-size: 1.4rem;
+    box-sizing: border-box;
+
+    sup {
+        &.multi {
+            padding: 0 0.6rem;
+        }
+    }
+}
