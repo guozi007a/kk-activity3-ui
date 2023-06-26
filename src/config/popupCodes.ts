@@ -12,7 +12,7 @@ const App = ({
     onClose,
     isMaskClickEnable = true,
     isShowCloseIcon = true,
-    closeIcon = 'icon-close1'
+    closeIcon = ''
 }) => {
 
     const Portal = (
@@ -23,9 +23,7 @@ const App = ({
             <div className='wrap'>
                 {
                     isShowCloseIcon
-                        ? <div className='x' onClick={onClose}>
-                            <AliIcon icon={closeIcon} />
-                        </div>
+                        ? <div className='x' onClick={onClose}></div>
                         : null
                 }
                 {children}
@@ -84,11 +82,7 @@ const lessCode = `
             justify-content: center;
             align-items: center;
             cursor: pointer;
-
-            svg {
-                width: 50%;
-                height: 50%;
-            }
+            .setbg('x.png');
 
             &:hover {
                 background-color: #f0f0f0;

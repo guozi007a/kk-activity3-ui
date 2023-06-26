@@ -35,6 +35,20 @@ const Popup = () => {
         <Controller>
             <tbody>
                 <tr>
+                    <td>弹框中的内容</td>
+                    <td>children</td>
+                    <td>{'React.ReactNode'}</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>是否打开弹框</td>
+                    <td>isOpen</td>
+                    <td>boolean</td>
+                    <td>-</td>
+                    <td></td>
+                    <td>由变量控制</td>
+                </tr>
+                <tr>
                     <td>点击遮罩是否关闭弹框</td>
                     <td>isMaskClickEnable</td>
                     <td>boolean</td>
@@ -79,6 +93,14 @@ const Popup = () => {
                     <td>closeIcon</td>
                     <td>string</td>
                     <td>'icon-close1'</td>
+                    <td></td>
+                    <td>开发时用到的是背景图</td>
+                </tr>
+                <tr>
+                    <td>点击关闭的回调</td>
+                    <td>onClose</td>
+                    <td>{'() => void'}</td>
+                    <td>-</td>
                 </tr>
             </tbody>
         </Controller>
