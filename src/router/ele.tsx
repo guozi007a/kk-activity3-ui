@@ -8,6 +8,7 @@ const AwardPreviewList = lazy(() => import('~/pages/AwardPreviewList'))
 const Popup = lazy(() => import('~/pages/Popup'))
 const SlidingDateTabs = lazy(() => import('~/pages/SlidingDateTabs'))
 const Badge = lazy(() => import('~/pages/Badge'))
+const Progress = lazy(() => import('~/pages/Progress'))
 
 export const ele: RouteObject[] = [
     {
@@ -33,6 +34,10 @@ export const ele: RouteObject[] = [
             {
                 path: 'badge',
                 element: gaurd(Badge)
+            },
+            {
+                path: 'progress',
+                element: gaurd(Progress)
             },
         ]
     },
