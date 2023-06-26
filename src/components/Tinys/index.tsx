@@ -12,7 +12,7 @@ export const TinyTitle2 = ({ title }: TitleType) => {
 }
 
 interface TinyTextType {
-    children: React.ReactNode
+    children?: React.ReactNode
 }
 export const TinyText = ({ children }: TinyTextType) => {
     return <p className={styles.tinytext}>{children}</p>
