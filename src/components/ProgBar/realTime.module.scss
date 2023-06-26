@@ -1,0 +1,32 @@
+
+.real_prog {
+    position: relative;
+    max-width: 80rem;
+    height: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--gray-2);
+
+    .prog {
+        position: relative;
+        width: 0%;
+        height: 100%;
+        border-radius: 0.5rem;
+        background-color: var(--blue-2);
+        transition: all .3s;
+
+        .accompany {
+            position: absolute;
+            z-index: 1;
+            top: calc(100% + 0.4rem);
+            right: -2rem;
+            width: 4rem;
+            height: 2rem;
+            text-align: center;
+            line-height: 2rem;
+            box-shadow: 0 0 0.2rem 0.1rem var(--blue-3);
+            border-radius: 0.6rem;
+            color: var(--blue-2);
+            font-size: 1.4rem;
+        }
+    }
+}

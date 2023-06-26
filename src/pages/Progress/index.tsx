@@ -7,11 +7,15 @@ import ProgSimple from '~/components/ProgBar/Simple'
 import { useState } from 'react'
 import { natureREG } from '~/utils/kkUtils'
 import { progSimpleCodes } from '~/config/progSimpleCodes'
+import RealProg from '~/components/ProgBar/RealTime'
+import { realProgCodes } from '~/config/realProgCodes'
 
 const Progress = () => {
 
     const [simTask, setSimTask] = useState('')
     const [simFinish, setSimFinish] = useState('')
+    const [realTask, setRealTask] = useState('')
+    const [realFinish, setRealFinish] = useState('')
 
     return <div className={styles.progress}>
         <Tiny.TinyTitle1 title='任务进度条' />
@@ -66,6 +70,56 @@ const Progress = () => {
             </tbody>
         </Controller>
         <ViewCode codes={progSimpleCodes} />
+        <Tiny.TinyTitle1 title='显示实时进度' />
+        <Tiny.TinyText>包含一个额外的显示实时进度的标签。</Tiny.TinyText>
+        <Tiny.TinyTitle2 title='效果展示' />
+        <div className={styles.container}>
+            <RealProg
+                task={realTask ? parseInt(realTask) : 0}
+                finish={realFinish ? parseInt(realFinish) : 0}
+            />
+        </div>
+        <Controller>
+            <tbody>
+                <tr>
+                    <td>总任务量</td>
+                    <td>task</td>
+                    <td>number</td>
+                    <td>0</td>
+                    <td>
+                        <input type="text"
+                            placeholder='0'
+                            value={realTask}
+                            onChange={e => {
+                                const val = e.target.value
+                                if (val === '' || natureREG.test(val)) {
+                                    setRealTask(val)
+                                }
+                            }}
+                        />
+                    </td>
+                </tr>
+                <tr>
+                    <td>任务完成量</td>
+                    <td>finish</td>
+                    <td>number</td>
+                    <td>0</td>
+                    <td>
+                        <input type="text"
+                            placeholder='0'
+                            value={realFinish}
+                            onChange={e => {
+                                const val = e.target.value
+                                if (val === '' || natureREG.test(val)) {
+                                    setRealFinish(val)
+                                }
+                            }}
+                        />
+                    </td>
+                </tr>
+            </tbody>
+        </Controller>
+        <ViewCode codes={realProgCodes} />
     </div>
 }
 
