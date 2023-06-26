@@ -6,6 +6,7 @@ import Controller from '~/components/Controller'
 import ViewCode from '~/components/ViewCode'
 import DateSwitchTabs, { ParamType } from '~/components/DateSwitchTabs'
 import { useState } from 'react'
+import { dateTabsCodes } from '~/config/dateTabsCodes'
 
 const REG = /^[0-9]\d*$/
 const DATE_REG = /^(202)[3-9]\/(0|1)[0-9]\/[0-3][0-9]$/
@@ -221,7 +222,7 @@ const SlidingDateTabs = () => {
                     </tr>
                 </tbody>
             </Controller>
-            <ViewCode />
+            <ViewCode codes={dateTabsCodes} />
         </Scrollbars>
     </div>
 }
