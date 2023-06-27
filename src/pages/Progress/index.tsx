@@ -10,6 +10,7 @@ import ProgMulti from '~/components/ProgBar/Multi'
 import { natureREG } from '~/utils/kkUtils'
 import { progSimpleCodes } from '~/config/progSimpleCodes'
 import { realProgCodes } from '~/config/realProgCodes'
+import { multiProgCodes } from '~/config/multiProgCodes'
 
 const Progress = () => {
 
@@ -182,7 +183,7 @@ const Progress = () => {
                 </tr>
             </tbody>
         </Controller>
-        <ViewCode />
+        <ViewCode codes={multiProgCodes} />
     </div>
 }
 
