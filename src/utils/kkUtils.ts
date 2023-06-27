@@ -15,3 +15,6 @@ export const isMobile = /Android|webOS|iPhone|iPod|BlackBerry|ipad/i.test(naviga
 
 // 判断自然数正则
 export const natureREG = /^\d+$/
+
+// 默认头像
+export const defaultAvatar = 'https://rescdn.kktv8.com/kk-web-res/activity3/play_2310/w-logo1.png'

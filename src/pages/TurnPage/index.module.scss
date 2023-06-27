@@ -1,0 +1,83 @@
+
+.turn_page {
+
+    .container {
+        position: relative;
+        width: 60rem;
+        box-sizing: border-box;
+        border: 0.4rem solid var(--primary-light);
+        border-radius: 1.2rem;
+        overflow: hidden;
+        padding-bottom: 3rem;
+        background-image: linear-gradient(#FFE3EB, #fff);
+
+        .header {
+            height: 5rem;
+            line-height: 5rem;
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: bold;
+            letter-spacing: 0.2rem;
+            background-color: #F35284;
+            color: var(--primary-light);
+        }
+
+        .list {
+            width: 40rem;
+            margin: auto;
+
+            .list_ul {
+                width: 100%;
+
+                .item {
+                    width: 100%;
+                    height: 5rem;
+                    background-image: linear-gradient(to right, #FFBED2, #FEDBEA);
+                    border-radius: 0.6rem;
+                    display: flex;
+                    align-items: center;
+                    box-sizing: border-box;
+                    padding: 0 1.5rem;
+                    margin-top: 1.2rem;
+
+                    .avatar {
+                        width: 4.2rem;
+                        height: 4.2rem;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            width: 4rem;
+                            height: 4rem;
+                            border-radius: 50%;
+                            overflow: hidden;
+                        }
+                    }
+
+                    .nick {
+                        width: 18rem;
+                        margin-left: 1rem;
+                    }
+
+                    .give {
+                        width: 9.6rem;
+                        height: 3rem;
+                        background: url('https://rescdn.kktv8.com/kk-web-res/activity3/play_2366/w-zhuanzenghaoyou.png') no-repeat center center;
+                        background-size: contain;
+                        cursor: pointer;
+                        margin-left: 3rem;
+                    }
+                }
+            }
+        }
+
+        .footer {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 8rem;
+            margin-top: 3rem;
+        }
+    }
+}
