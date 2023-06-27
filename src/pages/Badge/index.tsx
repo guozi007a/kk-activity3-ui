@@ -7,6 +7,8 @@ import Controller from '~/components/Controller'
 import ViewCode from '~/components/ViewCode'
 import { useState } from 'react'
 import { badgeCodes } from '~/config/badgeCodes'
+import SwitchBadge from '~/components/BadgeC/SwitchBadge'
+import { switchBadgeCodes } from '~/config/switchBadgeCodes'
 
 const Badge = () => {
 
@@ -14,6 +16,7 @@ const Badge = () => {
     const [showZero, setShowZero] = useState(false)
     const [critical, setCritical] = useState('')
     const [onlydot, setOnlydot] = useState(false)
+    const [isVisible, setIsVisible] = useState(false)
 
     return <div className={styles.badge}>
         <Tiny.TinyTitle1 title='徽标数' />
@@ -118,6 +121,41 @@ const Badge = () => {
             </tbody>
         </Controller>
         <ViewCode codes={badgeCodes} />
+        <Tiny.TinyTitle1 title='切换型徽标' />
+        <Tiny.TinyText>在有些场景中，并非显示数字，而是根据是否有可以领取的奖励来决定是否显示徽标，此时的徽标一般是指定的图标。这样的场景下，只有显示和隐藏两种状态的切换。</Tiny.TinyText>
+        <Tiny.TinyTitle2 title='何时使用' />
+        <Tiny.TinyText>根据接口返回的<Tiny.TinyTag tag='true' />或者<Tiny.TinyTag tag='false' />来决定是否显示徽标时，一般使用切换型徽标数。</Tiny.TinyText>
+        <Tiny.TinyTitle2 title='效果展示' />
+        <div className={styles.medium}>
+            <SwitchBadge isVisible={isVisible} />
+        </div>
+        <Controller>
+            <tbody>
+                <tr>
+                    <td>是否显示徽标</td>
+                    <td>isVisible</td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>
+                        <label htmlFor="visible1">
+                            <input type="radio" name="visible" id="visible1" value={1} checked={isVisible}
+                                onChange={() => {
+                                    setIsVisible(true)
+                                }}
+                            /> 是
+                        </label>
+                        <label htmlFor="visible2">
+                            <input type="radio" name="visible" id="visible2" value={0} checked={!isVisible}
+                                onChange={() => {
+                                    setIsVisible(false)
+                                }}
+                            /> 否
+                        </label>
+                    </td>
+                </tr>
+            </tbody>
+        </Controller>
+        <ViewCode codes={switchBadgeCodes} />                       
     </div>
 }
 
