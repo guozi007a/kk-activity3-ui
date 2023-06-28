@@ -10,6 +10,7 @@ const SlidingDateTabs = lazy(() => import('~/pages/SlidingDateTabs'))
 const Badge = lazy(() => import('~/pages/Badge'))
 const Progress = lazy(() => import('~/pages/Progress'))
 const TurnPage = lazy(() => import('~/pages/TurnPage'))
+const Toast = lazy(() => import('~/pages/Toast'))
 
 export const ele: RouteObject[] = [
     {
@@ -43,6 +44,10 @@ export const ele: RouteObject[] = [
             {
                 path: 'turn-page',
                 element: gaurd(TurnPage)
+            },
+            {
+                path: 'toast',
+                element: gaurd(Toast)
             },
         ]
     },
