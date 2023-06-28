@@ -15,7 +15,7 @@ const TurnPageC = ({
     pageSize = 5,
     onPage,
     total = 0,
-}) => {
+}: PropType) => {
 
     const [current, setCurrent] = useState(1);
 
@@ -30,7 +30,7 @@ const TurnPageC = ({
     }
 
     useEffect(() => { 
-        console.log('当前页数: ', current)
+        onPage && onPage(current)
     }, [current])
 
     return <div className={styles.turn_btns}>

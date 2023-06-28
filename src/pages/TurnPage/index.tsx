@@ -5,6 +5,8 @@ import Controller from '~/components/Controller'
 import ViewCode from '~/components/ViewCode'
 import TurnPageC from '~/components/TurnPageC'
 import { defaultAvatar } from '~/utils/kkUtils'
+import { useState } from 'react'
+import { turnPageCodes } from '~/config/turnPageCodes'
 
 const mockList = [
     { url: defaultAvatar, nick: '哈哈哈哈哈' },
@@ -20,9 +22,19 @@ const mockList = [
     { url: defaultAvatar, nick: '大力鼓励那我' },
     { url: defaultAvatar, nick: '大夫美女五390-2' },
     { url: defaultAvatar, nick: '但理解噶啊另外323' },
+    { url: defaultAvatar, nick: '' },
+    { url: defaultAvatar, nick: '' },
 ]
 
 const TurnPage = () => {
+
+    const [page, setPage] = useState(1)
+
+    const hanldePage = (page?: number) => {
+        console.log('page: ', page)
+        page && setPage(page)
+    }
+
     return <div className={styles.turn_page}>
         <Tiny.TinyTitle1 title='上下页' />
         <Tiny.TinyText>
@@ -38,12 +50,12 @@ const TurnPage = () => {
             <div className={styles.list}>
                 <ul className={styles.list_ul}>
                     {
-                        mockList.map((v, i) => {
+                        mockList.slice((page - 1) * 5, page * 5).map((v, i) => {
                             return <li key={i} className={styles.item}>
                                 <div className={styles.avatar}>
                                     <img src={v.url} alt="" />
                                 </div>
-                                <p className={styles.nick}>{v.nick}</p>
+                                <p className={styles.nick}>{v.nick || '虚位以待'}</p>
                                 <div className={styles.give}></div>
                             </li>
                         })
@@ -53,11 +65,38 @@ const TurnPage = () => {
             <div className={styles.footer}>
                 <TurnPageC
                     total={mockList.length}
+                    onPage={hanldePage}
                 />
             </div>
         </div>
-        <Controller></Controller>
-        <ViewCode />
+        <Controller>
+            <tbody>
+                <tr>
+                    <td>每页显示数量</td>
+                    <td>pageSize</td>
+                    <td>number</td>
+                    <td>5</td>
+                    <td>-</td>
+                    <td>固定需求</td>
+                </tr>
+                <tr>
+                    <td>数据总条数</td>
+                    <td>total</td>
+                    <td>number</td>
+                    <td>0</td>
+                    <td>-</td>
+                    <td>不足5的倍数时，用默认数据补齐</td>
+                </tr>
+                <tr>
+                    <td>翻页时的回调</td>
+                    <td>onPage</td>
+                    <td>{'(page?: number) => void'}</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </Controller>
+        <ViewCode codes={turnPageCodes} />
     </div>
 }
 
