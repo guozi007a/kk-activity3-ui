@@ -1,0 +1,76 @@
+
+@mixin seticon($color) {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        width: 100%;
+        height: 100%;
+        fill: $color;
+    }
+}
+
+.notify {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0.6rem 1.2rem;
+    max-width: 43.2rem;
+    word-break: break-all;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--primary-light);
+    font-family: var(--font-1);
+    display: inline-flex;
+    gap: 1rem;
+    border-radius: 0.6rem;
+    box-shadow: var(--shadow-4);
+    margin: auto;
+    pointer-events: all;
+
+    &.default {
+        background-color: var(--gray-5);
+
+        .notify_icon {
+            @include seticon(var(--gray-5));
+        }
+    }
+
+    &.info {
+        background-color: var(--primary-light);
+        color: var(--font-color-1);
+
+        .notify_icon {
+            @include seticon(var(--blue-3));
+        }
+    }
+    &.sc {
+        background-color: var(--green-1);
+
+        .notify_icon {
+            @include seticon(var(--green-1));
+        }
+    }
+    &.err {
+        background-color: var(--red-1);
+
+        .notify_icon {
+            @include seticon(var(--red-1));
+        }
+    }
+    &.warn {
+        background-color: var(--yellow-1);
+
+        .notify_icon {
+            @include seticon(var(--yellow-1));
+        }
+    }
+
+    .notify_icon {
+        @include seticon(var(--gray-5));
+    }
+}
