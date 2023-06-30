@@ -3,7 +3,7 @@ import styles from './index.module.scss'
 import * as Tiny from '~/components/Tinys'
 import Controller from '~/components/Controller'
 import ViewCode from '~/components/ViewCode'
-import Notifications from '~/components/ToastC/Notifications'
+import Notify from '~/components/ToastC/Notify'
 
 const Toast = () => {
     return <div className={styles.toast}>
@@ -13,7 +13,12 @@ const Toast = () => {
             这些提示通常调用<Tiny.TinyTag tag='toast' />方法来完成。该方法提供了默认、普通、成功、失败和警告等多种形式的轻提示。
         </Tiny.TinyText>
         <Tiny.TinyTitle2 title='效果展示' />
-        <Notifications />
+        <div style={{paddingLeft: '2rem'}}>
+            <Notify
+                type='warn'
+                content={<span>'hello, I am a small toast !'</span>}
+            />
+        </div>
         <Controller></Controller>
         <ViewCode />
     </div>

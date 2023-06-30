@@ -1,76 +1,53 @@
 
-@mixin seticon($color) {
-    width: 1.6rem;
-    height: 1.6rem;
-    background-color: var(--primary-light);
-    border-radius: 50%;
+@mixin seticon($size, $color, $rate: 1) {
+    width: $size;
+    height: $size;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 0.5rem;
 
     svg {
-        width: 100%;
-        height: 100%;
+        width: $size * $rate;
+        height: $size * $rate;
         fill: $color;
     }
 }
 
 .notify {
-    position: relative;
-    box-sizing: border-box;
-    padding: 0.6rem 1.2rem;
-    max-width: 43.2rem;
-    word-break: break-all;
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: var(--primary-light);
-    font-family: var(--font-1);
     display: inline-flex;
-    gap: 1rem;
+    font-family: var(--font-1);
+    font-size: 1.4rem;
+    user-select: none;
+    max-width: 43.2rem;
+    box-sizing: border-box;
+    padding: 0.5rem 1.2rem;
+    font-weight: 400;
     border-radius: 0.6rem;
     box-shadow: var(--shadow-4);
-    margin: auto;
-    pointer-events: all;
+    color: var(--primary-light);
+
+    .type_icon {
+        @include seticon(1.6rem, var(--primary-light), );
+    }
 
     &.default {
         background-color: var(--gray-5);
-
-        .notify_icon {
-            @include seticon(var(--gray-5));
-        }
     }
 
     &.info {
-        background-color: var(--primary-light);
-        color: var(--font-color-1);
-
-        .notify_icon {
-            @include seticon(var(--blue-3));
-        }
+        background-image: linear-gradient(to right, var(--cyan-1), var(--blue-2));
     }
+
     &.sc {
-        background-color: var(--green-1);
-
-        .notify_icon {
-            @include seticon(var(--green-1));
-        }
+        background-image: linear-gradient(to right, var(--green-2), var(--green-1));
     }
+
     &.err {
-        background-color: var(--red-1);
-
-        .notify_icon {
-            @include seticon(var(--red-1));
-        }
+        background-image: linear-gradient(to right, var(--red-2), var(--red-1));
     }
+
     &.warn {
-        background-color: var(--yellow-1);
-
-        .notify_icon {
-            @include seticon(var(--yellow-1));
-        }
-    }
-
-    .notify_icon {
-        @include seticon(var(--gray-5));
+        background-image: linear-gradient(to right, var(--yellow-2), var(--yellow-1));
     }
 }

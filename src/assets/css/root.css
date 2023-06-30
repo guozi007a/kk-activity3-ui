@@ -2,6 +2,8 @@
     --primary-dark: #1F2328;
     --primary-light: #fff;
 
+    --fff-1: rgba(255, 255, 255, .88);
+
     --gray: gray;
     --gray-1: rgba(5, 5, 5, 0.06);
     --gray-2: rgba(0, 0, 0, 0.06);
@@ -20,10 +22,13 @@
     --cyan-3: #8de0ff;
 
     --red-1: #ff4d4f;
+    --red-2: #f77072;
 
     --green-1: #52C41A;
+    --green-2: #60e31f;
 
     --yellow-1: #FAAD14;
+    --yellow-2: #ffc44d;
 
     --shadow-1: 0 0.06rem 1.6rem -0.8rem #00000014, 0 0.9rem 2.8rem #0000000d, 0 1.2rem 4.8rem 1.6rem #00000008;
     --shadow-2: 0 0 0.2rem 0.1rem var(--gray-4);

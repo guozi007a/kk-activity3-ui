@@ -1,26 +1,28 @@
-/** 单个轻提示结构组件 */
-import styles from './notify.module.scss'
+/** 单条通知 */
 import AliIcon from '~/components/AliIcon'
-import { toastTypes, icons, TypeConfig } from './toast.config'
-
-interface NotifyType {
-    content?: string | React.ReactNode
-    type?: TypeConfig
-}
+import styles from './notify.module.scss'
+import { NotifyProp, defaultType, defaultDuring, icons } from './interface.config'
 
 const Notify = ({
-    content = 'hello, i am a toast.',
-    type = '',
-}: NotifyType) => {
-    return <div className={`${styles.notify} ${styles[type || 'default']}`}>
+    type = defaultType,
+    content = '',
+    during = defaultDuring,
+}: NotifyProp) => { 
+    return <div className={`${styles.notify} ${type ? styles[type] : styles['default']}`}>
         {
-            !type || type === 'default'
-                ? null
-                : <div className={styles.notify_icon}>
-                    <AliIcon icon={type && toastTypes.includes(type) ? icons[type] : icons['default']} />
-                </div>
+            typeof content === 'string'
+                ? <>
+                    {
+                        type === 'default' || !type
+                            ? null
+                            : <div className={styles.type_icon}>
+                                <AliIcon icon={icons[type]} />
+                            </div>
+                    }
+                    <span>{content}</span>
+                </>
+                : content
         }
-        <div className={styles.notify_content}>{content}</div>
     </div>
 }
 
