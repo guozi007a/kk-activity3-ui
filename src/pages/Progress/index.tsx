@@ -32,6 +32,7 @@ const Progress = () => {
                 finish={simFinish ? parseInt(simFinish) : 0}
             />
         </div>
+        <Tiny.TinyTitle2 title='控制器' />
         <Controller>
             <tbody>
                 <tr>
@@ -82,6 +83,7 @@ const Progress = () => {
                 finish={realFinish ? parseInt(realFinish) : 0}
             />
         </div>
+        <Tiny.TinyTitle2 title='控制器' />
         <Controller>
             <tbody>
                 <tr>
@@ -138,6 +140,7 @@ const Progress = () => {
                 left={[200, 400, 600, 760]}
             />
         </div>
+        <Tiny.TinyTitle2 title='控制器' />
         <Controller>
             <tbody>
                 <tr>
