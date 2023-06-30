@@ -14,7 +14,7 @@ const Toast = () => {
         </Tiny.TinyText>
         <Tiny.TinyTitle2 title='效果展示' />
         <div style={{paddingLeft: '2rem'}}>
-            <Containers />
+            <Containers position='center' />
         </div>
         <Controller></Controller>
         <ViewCode />

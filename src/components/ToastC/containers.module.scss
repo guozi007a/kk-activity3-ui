@@ -4,7 +4,6 @@
     z-index: 100;
     width: fit-content;
     height: fit-content;
-    margin: auto;
     pointer-events: none;
     display: flex;
     flex-direction: column;
@@ -16,13 +15,18 @@
         left: 0;
         bottom: 0;
         right: 0;
+        margin: auto;
     }
 
     &.top {
         top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     &.bottom {
         bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

@@ -32,9 +32,7 @@ export const defaultPosition = 'center'
 /******************************** 类型 ************************************* */
 
 // icons type
-export interface IconsType {
-    [name: string] : string
-}
+export type IconsType = Partial<Record<TypeConfig, string>>
 
 // Notify type config
 export type TypeConfig = 'default' | 'info' | 'sc' | 'err' | 'warn'
@@ -55,5 +53,13 @@ export type PositionType = 'top' | 'center' | 'bottom'
 // Containers props type
 export interface ContainersProp {
     // 容器位置
+    position?: PositionType
+}
+
+// 增加一条通知
+export interface OpenType extends NotifyProp {
+    // 唯一标识
+    key: React.Key
+    // 位置
     position?: PositionType
 }
