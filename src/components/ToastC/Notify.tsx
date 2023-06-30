@@ -1,12 +1,12 @@
 /** 单条通知 */
 import AliIcon from '~/components/AliIcon'
 import styles from './notify.module.scss'
-import { NotifyProp, defaultType, defaultDuring, icons } from './interface.config'
+import { NotifyProp, icons } from './interface.config'
 
 const Notify = ({
-    type = defaultType,
-    content = '',
-    during = defaultDuring,
+    type,
+    content,
+    // during,
 }: NotifyProp) => { 
     return <div className={`${styles.notify} ${type ? styles[type] : styles['default']}`}>
         {
