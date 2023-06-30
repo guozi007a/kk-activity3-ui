@@ -26,6 +26,7 @@
     border-radius: 0.6rem;
     box-shadow: var(--shadow-4);
     color: var(--primary-light);
+    pointer-events: all;
 
     .type_icon {
         @include seticon(1.6rem, var(--primary-light), );

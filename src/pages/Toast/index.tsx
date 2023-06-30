@@ -3,7 +3,7 @@ import styles from './index.module.scss'
 import * as Tiny from '~/components/Tinys'
 import Controller from '~/components/Controller'
 import ViewCode from '~/components/ViewCode'
-import Notify from '~/components/ToastC/Notify'
+import Containers from '~/components/ToastC/Containers'
 
 const Toast = () => {
     return <div className={styles.toast}>
@@ -14,10 +14,7 @@ const Toast = () => {
         </Tiny.TinyText>
         <Tiny.TinyTitle2 title='效果展示' />
         <div style={{paddingLeft: '2rem'}}>
-            <Notify
-                type='warn'
-                content={<span>'hello, I am a small toast !'</span>}
-            />
+            <Containers />
         </div>
         <Controller></Controller>
         <ViewCode />

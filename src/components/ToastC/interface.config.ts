@@ -26,6 +26,9 @@ export const defaultType = 'default'
 // 默认持续时间 1.5s
 export const defaultDuring = 1.5
 
+// 默认容器位置
+export const defaultPosition = 'center'
+
 /******************************** 类型 ************************************* */
 
 // icons type
@@ -33,12 +36,24 @@ export interface IconsType {
     [name: string] : string
 }
 
+// Notify type config
+export type TypeConfig = 'default' | 'info' | 'sc' | 'err' | 'warn'
+
 // Notify props type
 export interface NotifyProp {
     // 通知类型
-    type?: 'default' | 'info' | 'sc' | 'err' | 'warn'
+    type?: TypeConfig
     // 通知内容
     content?: string | React.ReactNode
     // 持续时间 单位s
     during?: number
+}
+
+// position type
+export type PositionType = 'top' | 'center' | 'bottom'
+
+// Containers props type
+export interface ContainersProp {
+    // 容器位置
+    position?: PositionType
 }
