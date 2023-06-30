@@ -54,7 +54,12 @@ export type PositionType = 'top' | 'center' | 'bottom'
 export interface ContainersProp {
     // 容器位置
     position?: PositionType
+    // test info type
+    getAPI?: (api: {}) => void
 }
+
+// position obj type
+export type PositionObjType = Partial<Record<PositionType, []>>
 
 // 增加一条通知
 export interface OpenType extends NotifyProp {
@@ -63,3 +68,6 @@ export interface OpenType extends NotifyProp {
     // 位置
     position?: PositionType
 }
+
+
+/********************************* test ************************************* */
