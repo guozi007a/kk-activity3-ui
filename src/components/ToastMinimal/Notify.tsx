@@ -1,9 +1,13 @@
 /* 单条通知 */
 import styles from './notify.module.scss'
+import { NotifyProp } from './interface.config'
 
-const Notify = () => {
-    return <div className={styles.notify}>
-        
+const Notify = ({ 
+    type,
+    content,
+}: NotifyProp) => {
+    return <div className={`${styles.notify} ${styles[type || 'default']}`}>
+        {content}
     </div>
 }
 

@@ -3,11 +3,10 @@ import styles from './index.module.scss'
 import * as Tiny from '~/components/Tinys'
 import Controller from '~/components/Controller'
 import ViewCode from '~/components/ViewCode'
-import useToast from '~/components/ToastC'
+import Notifications from '~/components/ToastMinimal/Notifications'
+import Notify from '~/components/ToastMinimal/Notify'
 
 const Toast = () => {
-    const [api, containers] = useToast()
-    console.log('api: ', api)
     return <div className={styles.toast}>
         <Tiny.TinyTitle1 title='全局轻提示' />
         <Tiny.TinyText>
@@ -15,17 +14,10 @@ const Toast = () => {
             这些提示通常调用<Tiny.TinyTag tag='toast' />方法来完成。该方法提供了默认、普通、成功、失败和警告等多种形式的轻提示。
         </Tiny.TinyText>
         <Tiny.TinyTitle2 title='效果展示' />
-        <div style={{ paddingLeft: '2rem' }}>
-            { containers }
-            <button style={{ width: '10rem', height: '3rem' }}
-                onClick={() => {
-                    api.open({
-                        position: 'center',
-                        content: 'hello, i am a small toast',
-                    })
-                }}
-            >click me</button>
-        </div>
+        <Notifications>
+            <Notify content='hello' />
+            <Notify type='sc' content='hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello' />
+        </Notifications>
         <Controller></Controller>
         <ViewCode />
     </div>
