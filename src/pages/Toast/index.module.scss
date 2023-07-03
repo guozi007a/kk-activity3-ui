@@ -1,0 +1,21 @@
+
+.toast {
+    user-select: none;
+    
+    .btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 2rem;
+
+        button {
+            box-sizing: border-box;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.6rem;
+            border: 1px solid var(--blue-2);
+            background-color: var(--primary-light);
+            color: var(--blue-2);
+            cursor: pointer;
+        }
+    }
+}

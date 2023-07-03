@@ -30,20 +30,20 @@ const open = (content?: string | React.ReactNode, config?: NotifyProp) => {
 export const toast = {
     // 全局配置
     config: {} as GlobalConfig,
-    default(content?: string | React.ReactNode) {
-        open(content, { type: 'default', ...this.config })
+    default(content?: string | React.ReactNode, localConfig?: GlobalConfig) {
+        open(content, { type: 'default', ...this.config, ...localConfig })
     },
-    info(content?: string | React.ReactNode) {
-        open(content, { type: 'info', ...this.config })
+    info(content?: string | React.ReactNode, localConfig?: GlobalConfig) {
+        open(content, { type: 'info', ...this.config, ...localConfig })
     },
-    sc(content?: string | React.ReactNode) {
-        open(content, { type: 'sc', ...this.config })
+    sc(content?: string | React.ReactNode, localConfig?: GlobalConfig) {
+        open(content, { type: 'sc', ...this.config, ...localConfig })
     },
-    err(content?: string | React.ReactNode) {
-        open(content, { type: 'err', ...this.config })
+    err(content?: string | React.ReactNode, localConfig?: GlobalConfig) {
+        open(content, { type: 'err', ...this.config, ...localConfig })
     },
-    warn(content?: string | React.ReactNode) {
-        open(content, { type: 'warn', ...this.config })
+    warn(content?: string | React.ReactNode, localConfig?: GlobalConfig) {
+        open(content, { type: 'warn', ...this.config, ...localConfig })
     },
 }
 
