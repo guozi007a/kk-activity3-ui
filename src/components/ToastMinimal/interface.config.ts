@@ -24,3 +24,15 @@ export interface NotifyProp {
     // 内容
     content?: string | React.ReactNode
 }
+
+// icon类型
+export type IconsType = Partial<Record<TypesConfig, string>>
+
+// 通知类型和对应的icon
+export const icons: IconsType = {
+    default: '',
+    info: 'icon-xiaoxi',
+    sc: 'icon-chenggong',
+    err: 'icon-shibai',
+    warn: 'icon-jinggao_tixing',
+}

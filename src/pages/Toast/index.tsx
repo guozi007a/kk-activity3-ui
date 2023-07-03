@@ -15,8 +15,17 @@ const Toast = () => {
         </Tiny.TinyText>
         <Tiny.TinyTitle2 title='效果展示' />
         <Notifications>
-            <Notify content='hello' />
-            <Notify type='sc' content='hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello' />
+            <Notify content='hello, i am a small toast !' />
+            <Notify type='sc' content='恭喜获得大逼兜一个！' />
+            <Notify type='info'
+                content='你好啊，我是activity3-ui'
+            />
+            <Notify type='err'
+                content='支付失败，发送验证码无响应，请重试~'
+            />
+            <Notify type='warn'
+                content='请勿重复点击~'
+            />
         </Notifications>
         <Controller></Controller>
         <ViewCode />
