@@ -3,42 +3,36 @@ import styles from './notofications.module.scss'
 import { createPortal } from 'react-dom'
 import { useState, useEffect } from 'react'
 import Notify from './Notify'
-import { NotificationsProp, PositionObjType, NotifyProp, PositionsType } from './interface.config'
+import { PositionObjType, NotifyProp, PositionsType } from './interface.config'
+import { useNotifyList } from './notifyList'
 
-const Notifications = ({
-    position,
-}: NotificationsProp) => {
 
-    const [notifyList, setNotifyList] = useState<NotifyProp[]>([])
+const Notifications = () => {
+
     const [positionObj, setPositionObj] = useState<PositionObjType>({})
+    const notifyList = useNotifyList(state => state.notifyList)
 
     useEffect(() => { 
-        setPositionObj({
-            top: [
-                { content: 'hello, i am a small toast !' },
-                { type: 'err', content: '支付失败，发送验证码无响应，请重试~' },
-            ],
-            center: [
-                { type: 'sc', content: '恭喜获得大逼兜一个！' },
-                { type: 'warn', content: '请勿重复点击~' },
-            ],
-            bottom: [
-                { type: 'info', content: '你好啊，我是activity3-ui' }
-            ],
+        const clone = {} as PositionObjType
+        notifyList?.forEach(v => {
+            const place = v.position || 'center'
+            if (clone[place]) {
+                clone[place]!.push(v)
+            } else {
+                clone[place] = [v]
+            }
         })
-    }, [])
+        setPositionObj(clone)
+    }, [notifyList])
 
-    // return <div className={`${styles.notifications} ${styles[position || 'center']}`}>
-        
-    // </div>
     return createPortal(
         <>
             {
                 Object.keys(positionObj).map((v, i) => {
                     return <div key={i} className={`${styles.notifications} ${styles[v]}`}>
                         {
-                            (positionObj[v as PositionsType] as NotifyProp[]).map((item, index) => {
-                                return <Notify key={index} type={item.type} content={item.content} />
+                            (positionObj[v as PositionsType] as NotifyProp[]).map((item) => {
+                                return <Notify key={item.key} operKey={item.key} type={item.type} content={item.content} />
                             })
                         }
                     </div>

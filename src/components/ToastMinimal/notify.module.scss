@@ -15,6 +15,11 @@
     }
 }
 
+@keyframes visit {
+    0% {margin-top: 0;}
+    100% {margin-top: 1.5rem;}
+}
+
 .notify {
     display: inline-flex;
     font-family: var(--font-1);
@@ -29,6 +34,7 @@
     color: var(--primary-light);
     word-break: break-all;
     pointer-events: all;
+    animation: visit 0.3s forwards;
 
     .type_icon {
         @include seticon(1.6rem, var(--primary-light), );

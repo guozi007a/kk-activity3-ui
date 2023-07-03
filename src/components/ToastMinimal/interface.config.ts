@@ -19,6 +19,10 @@ export type TypesConfig = 'default' | 'info' | 'sc' | 'err' | 'warn'
 
 // Notify props
 export interface NotifyProp {
+    // 唯一标识
+    key?: React.Key
+    // 操作标识
+    operKey?: React.Key
     // 类型
     type?: TypesConfig
     // 内容

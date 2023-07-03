@@ -3,10 +3,12 @@ import styles from './index.module.scss'
 import * as Tiny from '~/components/Tinys'
 import Controller from '~/components/Controller'
 import ViewCode from '~/components/ViewCode'
-import Notifications from '~/components/ToastMinimal/Notifications'
-// import Notify from '~/components/ToastMinimal/Notify'
+import useToast from '~/components/ToastMinimal'
 
 const Toast = () => {
+
+    const [toast, contextHolder] = useToast()
+
     return <div className={styles.toast}>
         <Tiny.TinyTitle1 title='全局轻提示' />
         <Tiny.TinyText>
@@ -14,20 +16,12 @@ const Toast = () => {
             这些提示通常调用<Tiny.TinyTag tag='toast' />方法来完成。该方法提供了默认、普通、成功、失败和警告等多种形式的轻提示。
         </Tiny.TinyText>
         <Tiny.TinyTitle2 title='效果展示' />
-        {/* <Notifications>
-            <Notify content='hello, i am a small toast !' />
-            <Notify type='sc' content='恭喜获得大逼兜一个！' />
-            <Notify type='info'
-                content='你好啊，我是activity3-ui'
-            />
-            <Notify type='err'
-                content='支付失败，发送验证码无响应，请重试~'
-            />
-            <Notify type='warn'
-                content='请勿重复点击~'
-            />
-        </Notifications> */}
-        <Notifications />
+        {contextHolder}
+        <button onClick={() => {toast?.default!('hello, i am a small toast')}}>点击1</button>
+        <button onClick={() => { toast.info!('hello, i am a small toast', { position: 'top' }) }}>点击2</button>
+        <button onClick={() => { toast.sc!('hello, i am a small toast', { position: 'bottom' }) }}>点击3</button>
+        <button onClick={() => { toast.err!('hello, i am a small toast') }}>点击4</button>
+        <button onClick={() => { toast.warn!('hello, i am a small toast') }}>点击5</button>
         <Controller></Controller>
         <ViewCode />
     </div>
