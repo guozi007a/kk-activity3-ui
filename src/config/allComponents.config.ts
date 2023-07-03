@@ -15,6 +15,6 @@ export const viewComponents = [
     { name: '徽标数', component: 'Badge', url: badgeImg, route: 'badge' },
     { name: '进度条', component: 'Progress', url: progressImg, route: 'progress' },
     { name: '上下页', component: 'TurnPage', url: turnPageImg, route: 'turn-page' },
-    { name: '全局轻提示', component: 'Toast', url: toastImg, route: 'toast' },
+    { name: '轻提示', component: 'Toast', url: toastImg, route: 'toast' },
     { name: '悬浮提示框', component: 'HoverPop', url: hoverPopImg, route: 'hover-pop' },
 ]

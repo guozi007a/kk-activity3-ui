@@ -6,6 +6,9 @@ export const types = ['default', 'info', 'sc', 'err', 'warn']
 // 通知类型的类型
 export type TypesConfig = 'default' | 'info' | 'sc' | 'err' | 'warn'
 
+// 通知位置
+export type PositionConfig = 'top' | 'center' | 'bottom'
+
 // icons类型
 export type IconsType = Record<TypesConfig, string>
 
@@ -21,13 +24,19 @@ export const icons: IconsType = {
 // Notify prop
 export interface NotifyProp {
     // 唯一标识
-    key?: React.Key
-    // 操作标识
-    operKey?: React.Key
+    dataKey?: string
     // 类型
     type?: TypesConfig
     // 内容
     content?: string | React.ReactNode
-    // 持续时间 单位s
+    // 持续时间
     during?: number
+    // 位置
+    position?: PositionConfig
+}
+
+// global config
+export interface GlobalConfig {
+    during?: number
+    position?: PositionConfig
 }
