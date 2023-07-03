@@ -4,7 +4,7 @@ import * as Tiny from '~/components/Tinys'
 import Controller from '~/components/Controller'
 import ViewCode from '~/components/ViewCode'
 import Notifications from '~/components/ToastMinimal/Notifications'
-import Notify from '~/components/ToastMinimal/Notify'
+// import Notify from '~/components/ToastMinimal/Notify'
 
 const Toast = () => {
     return <div className={styles.toast}>
@@ -14,7 +14,7 @@ const Toast = () => {
             这些提示通常调用<Tiny.TinyTag tag='toast' />方法来完成。该方法提供了默认、普通、成功、失败和警告等多种形式的轻提示。
         </Tiny.TinyText>
         <Tiny.TinyTitle2 title='效果展示' />
-        <Notifications>
+        {/* <Notifications>
             <Notify content='hello, i am a small toast !' />
             <Notify type='sc' content='恭喜获得大逼兜一个！' />
             <Notify type='info'
@@ -26,7 +26,8 @@ const Toast = () => {
             <Notify type='warn'
                 content='请勿重复点击~'
             />
-        </Notifications>
+        </Notifications> */}
+        <Notifications />
         <Controller></Controller>
         <ViewCode />
     </div>

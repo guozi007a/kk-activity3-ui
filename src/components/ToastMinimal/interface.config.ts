@@ -9,7 +9,6 @@ export type PositionsType = 'top' | 'center' | 'bottom'
 // 容器类型
 export interface NotificationsProp {
     position?: PositionsType
-    children?: React.ReactNode
 }
 
 // 通知类型
@@ -20,9 +19,12 @@ export type TypesConfig = 'default' | 'info' | 'sc' | 'err' | 'warn'
 
 // Notify props
 export interface NotifyProp {
+    // 类型
     type?: TypesConfig
     // 内容
     content?: string | React.ReactNode
+    // 位置
+    position?: PositionsType
 }
 
 // icon类型
@@ -36,3 +38,6 @@ export const icons: IconsType = {
     err: 'icon-shibai',
     warn: 'icon-jinggao_tixing',
 }
+
+// 位置对象 对应每个容器
+export type PositionObjType = Partial<Record<PositionsType, NotifyProp[]>>
