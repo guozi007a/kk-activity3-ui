@@ -3,10 +3,6 @@ import styles from './index.module.scss'
 import * as Tiny from '~/components/Tinys'
 import { toast, showToast } from '~/components/ToastGlobal'
 
-toast.config = {
-    position: 'top'
-}
-
 const Toast = () => {
 
     return <div className={styles.toast}>
