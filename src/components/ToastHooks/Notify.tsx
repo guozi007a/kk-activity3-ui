@@ -1,12 +1,28 @@
 /** 单条通知 */
 import styles from './notify.module.scss'
 import AliIcon from '~/components/AliIcon'
-import { NotifyProp, icons } from './interface.config'
+import { NotifyProp, icons, useNotifyListStore } from './interface.config'
+import { useEffect } from 'react'
 
 const Notify = ({
     type,
     content,
+    during,
+    operKey,
 }: NotifyProp) => {
+
+    const delNotify = useNotifyListStore(state => state.delNotify)
+
+    useEffect(() => { 
+        const timer = setTimeout(() => { 
+            delNotify(operKey!)
+        }, during! * 1000)
+
+        return () => {
+            clearTimeout(timer)
+        }
+    }, [during])
+
     return <div className={`${styles.notify} ${styles[type || 'default']}`}>
         {
             typeof content === 'string'

@@ -85,14 +85,20 @@ export const useNotifyListStore = create<NotifyListStore>(set => ({
 
 // api.config type
 export interface ApiConfigType {
+    readonly during: number
+    readonly position: PositionsType
+    // 每个容器最多包含多少条通知
+    readonly limits: number
+}
+
+// api.func.config type, limit to write during and position
+export interface ApiFuncConfigType {
     during?: number
     position?: PositionsType
-    // 每个容器最多包含多少条通知
-    limits?: number
 }
 
 // api.func type
-export type ApiFuncType = (content: string | React.ReactNode, config?: ApiConfigType) => void
+export type ApiFuncType = (content: string | React.ReactNode, config?: ApiFuncConfigType) => void
 
 // api config
 export interface ApiConfig {
@@ -106,7 +112,19 @@ export interface ApiConfig {
 
 // open.config type
 export interface OpenConfig extends ApiConfigType {
-    type?: TypesConfig
+    type: TypesConfig
 }
 // open type
 export type OpenType = (content: string | React.ReactNode, config: OpenConfig) => void
+
+// useToast根配置 类型
+export interface RootConfigType {
+    during?: number
+    position?: PositionsType
+    limits?: number
+}
+
+// Container prop
+export interface ContainerType {
+    limits: number
+}

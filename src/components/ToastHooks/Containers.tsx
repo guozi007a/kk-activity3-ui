@@ -2,10 +2,12 @@
 import styles from './containers.module.scss'
 import { createPortal } from 'react-dom'
 import { useState, useEffect } from 'react'
-import { PlacementsType, PositionsType, useNotifyListStore } from './interface.config'
+import { PlacementsType, PositionsType, useNotifyListStore, ContainerType } from './interface.config'
 import Notify from './Notify'
 
-const Containers = () => {
+const Containers = ({
+    limits,
+}: ContainerType) => {
 
     const notifyList = useNotifyListStore(state => state.notifyList)
     const clearNotifyList = useNotifyListStore(state => state.clearNotifyList)
@@ -19,7 +21,8 @@ const Containers = () => {
             }
         })
         Object.keys(clone).forEach(position => {
-            clone[position as PositionsType] = notifyList.filter(notify => notify.position === position) ?? []
+            const list = notifyList.filter(notify => notify.position === position) ?? []
+            clone[position as PositionsType] = list.slice(- limits)
         })
         setPlacements(clone)
     }, [notifyList])
