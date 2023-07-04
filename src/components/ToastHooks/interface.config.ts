@@ -76,7 +76,7 @@ export const useNotifyListStore = create<NotifyListStore>(set => ({
     // 添加一个通知
     addNotify: (notify) => set(state => ({ notifyList: [...state.notifyList, notify] })),
     // 删除一个通知
-    delNotify: (key) => set(state => ({ notifyList: state.notifyList.filter(config => config.key !== key) })),
+    delNotify: (key) => set(state => ({ notifyList: state.notifyList.filter(config => config.key !== key) ?? [] })),
     // 清空通知列表
     clearNotifyList: () => set({ notifyList: [] }),
     // 设置通知列表
@@ -105,4 +105,8 @@ export interface ApiConfig {
 }
 
 // open.config type
-export type OpenConfig = (content: string | React.ReactNode, config: ApiConfigType) => void
+export interface OpenConfig extends ApiConfigType {
+    type?: TypesConfig
+}
+// open type
+export type OpenType = (content: string | React.ReactNode, config: OpenConfig) => void
