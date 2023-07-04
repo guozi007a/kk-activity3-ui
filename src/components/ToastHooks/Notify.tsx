@@ -9,20 +9,12 @@ const Notify = ({
     content,
     during,
     operKey,
-    position,
-    limits,
 }: NotifyProp) => {
 
-    const notifyList = useNotifyListStore(state => state.notifyList)
     const delNotify = useNotifyListStore(state => state.delNotify)
 
     useEffect(() => { 
         const timer = setTimeout(() => { 
-            const list = notifyList.filter(notify => notify.position === position)
-            if (list.length > limits!) {
-                
-            }
-
             delNotify(operKey!)
         }, during! * 1000)
 

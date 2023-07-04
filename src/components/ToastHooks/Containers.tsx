@@ -41,15 +41,13 @@ const Containers = ({
                     return <div key={position} className={`${styles.containers} ${styles[position]}`}>
                         {
                             placements[position as PositionsType]!.map((config) => {
-                                const { key, type, content, during, position, limits } = config
+                                const { key, type, content, during } = config
                                 return <Notify
                                     key={key}
                                     operKey={key}
                                     type={type}
                                     content={content}
                                     during={during}
-                                    position={position}
-                                    limits={limits}
                                 />
                             })
                         }
