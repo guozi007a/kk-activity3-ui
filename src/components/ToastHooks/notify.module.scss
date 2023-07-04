@@ -16,8 +16,8 @@
 }
 
 @keyframes visit {
-    0% {margin-top: 0;}
-    100% {margin-top: 1.5rem;}
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-1.5rem);}
 }
 
 .notify {
@@ -38,6 +38,7 @@
 
     .type_icon {
         @include seticon(1.6rem, var(--primary-light), );
+        margin-top: 0.2rem;
     }
 
     &.default {

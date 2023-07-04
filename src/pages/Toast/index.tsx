@@ -2,8 +2,11 @@
 import styles from './index.module.scss'
 import * as Tiny from '~/components/Tinys'
 import { toast, showToast } from '~/components/ToastGlobal'
+import useToast from '~/components/ToastHooks'
 
 const Toast = () => {
+
+    const [api] = useToast()
 
     return <div className={styles.toast}>
         <Tiny.TinyTitle1 title='轻提示' />
@@ -36,6 +39,14 @@ const Toast = () => {
             <button onClick={() => { toast.sc('底部，成功提示', { position: 'bottom' }) }}>bottom success</button>
             <button onClick={() => { toast.err('底部，错误提示', { position: 'bottom' }) }}>bottom error</button>
             <button onClick={() => { toast.warn('底部，警告提示', { position: 'bottom' }) }}>bottom warn</button>
+        </div>
+        <Tiny.TinyTitle2 title='上下文轻提示' />
+        <Tiny.TinyText>
+            相对于全局提示来说，上下文轻提示主要特点在于它调用了上下文的<Tiny.TinyTag tag='contextHolder' />，只显示在当前页面，切换路由，就不会显示该提示。
+        </Tiny.TinyText>
+        <Tiny.TinyTitle2 title='效果展示' />
+        <div className={styles.btns}>
+            <button onClick={() => { api.default('hello') }}>测试</button>
         </div>
     </div>
 }
