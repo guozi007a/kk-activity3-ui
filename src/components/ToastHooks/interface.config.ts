@@ -125,8 +125,3 @@ export interface RootConfigType {
     position?: PositionsType
     limits?: number
 }
-
-// Container prop
-export interface ContainerType {
-    limits: number
-}
