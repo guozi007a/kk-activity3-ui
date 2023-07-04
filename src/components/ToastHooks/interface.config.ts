@@ -56,6 +56,8 @@ export interface NotifyProp {
     content?: ContentType
     // 持续时间
     during?: number
+    // 限制单个容器最大条数
+    limits?: number
 }
 
 // 位置对象类型
