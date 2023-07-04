@@ -12,8 +12,6 @@ const Containers = () => {
     const [placements, setPlacements] = useState<PlacementsType>({})
 
     useEffect(() => { 
-        console.log('notifyList--container: ', notifyList)
-        console.log('placements--container: ', placements)
         const clone = { ...placements }
         notifyList.forEach(notify => {
             if (!clone[notify.position!]) {
@@ -21,7 +19,6 @@ const Containers = () => {
             }
         })
         Object.keys(clone).forEach(position => {
-            console.log('position--clone: ', position)
             clone[position as PositionsType] = notifyList.filter(notify => notify.position === position) ?? []
         })
         setPlacements(clone)
