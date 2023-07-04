@@ -44,6 +44,9 @@ const Toast = () => {
         <Tiny.TinyText>
             相对于全局提示来说，上下文轻提示主要特点在于它调用了上下文的<Tiny.TinyTag tag='contextHolder' />，只显示在当前页面，切换路由，就不会显示该提示。
         </Tiny.TinyText>
+        <Tiny.TinyText>
+            另一个不同的是，它同时维护了多个通知容器，并且各个容器是互相独立的。上下文也可以接收到其他的状态传递。不过，它需要在使用提示前，先加载一次容器组件。
+        </Tiny.TinyText>
         <Tiny.TinyTitle2 title='效果展示' />
         { contextHolder }
         <div className={styles.btns}>
