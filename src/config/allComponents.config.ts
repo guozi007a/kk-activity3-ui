@@ -7,6 +7,7 @@ const progressImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*gK_4
 const turnPageImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*EYuhSpw1iSwAAAAAAAAAAAAADrJ8AQ/original'
 const toastImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*Ct7bT7rrTTAAAAAAAAAAAAAADrJ8AQ/original'
 const hoverPopImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*6RWNQ78WtvEAAAAAAAAAAAAADrJ8AQ/original'
+const ranklistImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*EYuhSpw1iSwAAAAAAAAAAAAADrJ8AQ/original'
 
 export const viewComponents = [
     { name: '奖励预览列表', component: 'AwardPreviewList', url: awardPreviewListImg, route: 'award-preview-list' },
@@ -17,4 +18,5 @@ export const viewComponents = [
     { name: '上下页', component: 'TurnPage', url: turnPageImg, route: 'turn-page' },
     { name: '轻提示', component: 'Toast', url: toastImg, route: 'toast' },
     { name: '悬浮提示框', component: 'HoverPop', url: hoverPopImg, route: 'hover-pop' },
+    { name: '榜单列表', component: 'RankList', url: ranklistImg, route: 'rank-list' },
 ]
