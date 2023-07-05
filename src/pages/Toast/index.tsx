@@ -50,7 +50,7 @@ const Toast = () => {
         <Tiny.TinyTitle2 title='效果展示' />
         { contextHolder }
         <div className={styles.btns}>
-        <button onClick={() => { api.default('顶部，默认提示') }}>top default</button>
+            <Tiny.TinyButton onClick={() => { api.default('顶部，默认提示') }}>top default</Tiny.TinyButton>
             <Tiny.TinyButton onClick={() => { api.info('顶部，普通提示') }}>top info</Tiny.TinyButton>
             <Tiny.TinyButton onClick={() => { api.sc('顶部，成功提示') }}>top success</Tiny.TinyButton>
             <Tiny.TinyButton onClick={() => { api.err('顶部，错误提示') }}>top error</Tiny.TinyButton>
