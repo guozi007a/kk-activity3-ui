@@ -1,0 +1,31 @@
+
+.hover_pop {
+    .stone {
+        position: relative;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 0.6rem;
+        background-color: var(--gray-3);
+        cursor: pointer;
+
+        .mirror {
+            position: absolute;
+            z-index: 1;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18rem;
+            height: 10rem;
+            border-radius: 0.6rem;
+            background-color: var(--gray-5);
+            cursor: default;
+            display: none;
+        }
+
+        &:hover {
+            .mirror {
+                display: block;
+            }
+        }
+    }
+}
