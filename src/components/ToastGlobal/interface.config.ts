@@ -13,7 +13,7 @@ export type PositionConfig = 'top' | 'center' | 'bottom'
 export type IconsType = Record<TypesConfig, string>
 
 // 默认位置
-export const POSITION = 'top'
+export const POSITION = 'center'
 
 // 默认持续时间
 export const DURING = 2
