@@ -14,7 +14,7 @@ const Toast = () => {
             在项目中，点击按钮或调用接口时，会向用户提供活动开启、活动结束、活动进度、是否中奖、开奖奖励、金额不足、金额超限等提示。<br />
             这些提示通常调用<Tiny.TinyTag tag='toast' />方法或者默认的<Tiny.TinyTag tag='showToast' />方法来完成。<Tiny.TinyTag tag='toast' />方法提供了默认、普通、成功、失败和警告等多种类型，以及顶部、居中和底部等多种位置的轻提示。
         </Tiny.TinyText>
-        <Tiny.TinyTitle2 title='全局轻提示' />
+        <Tiny.TinyTitle1 title='全局轻提示' />
         <Tiny.TinyText>
             全局轻提示是相对于<Tiny.TinyTag tag='hooks' />版本的上下文轻提示而言的。它没有独立容器，每个提示单独在<Tiny.TinyTag tag='body' />中加载。
         </Tiny.TinyText>
@@ -41,7 +41,7 @@ const Toast = () => {
             <Tiny.TinyButton onClick={() => { toast.warn('底部，警告提示', { position: 'bottom' }) }}>bottom warn</Tiny.TinyButton>
             <Tiny.TinyButton onClick={() => {toast.default(null, {during: 3})}}>top null</Tiny.TinyButton>
         </div>
-        <Tiny.TinyTitle2 title='上下文轻提示' />
+        <Tiny.TinyTitle1 title='上下文轻提示' />
         <Tiny.TinyText>
             相对于全局提示来说，上下文轻提示主要特点在于它调用了上下文的<Tiny.TinyTag tag='contextHolder' />，只显示在当前页面，切换路由，就不会显示该提示。
         </Tiny.TinyText>

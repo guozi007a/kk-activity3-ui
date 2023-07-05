@@ -56,7 +56,7 @@ const SlidingDateTabs = () => {
         <Tiny.TinyText>
             IOS不支持通过<Tiny.TinyTag tag='-' />连接的年月日时间格式，也不支持毫秒级以下的时间戳，在使用<Tiny.TinyTag tag='new Date' />方法时需要避免此处Bug。
         </Tiny.TinyText>
-        <Tiny.TinyTitle2 title='弹性式' />
+        <Tiny.TinyTitle1 title='弹性式' />
         <Tiny.TinyText>
             标签页容器的宽度是由可视标签页个数决定的。此时，每个可视标签页都是完整展现出来的。
         </Tiny.TinyText>
@@ -227,7 +227,7 @@ const SlidingDateTabs = () => {
             </tbody>
         </Controller>
         <ViewCode codes={dateTabsCodes} />
-        <Tiny.TinyTitle2 title='固定式' />
+        <Tiny.TinyTitle1 title='固定式' />
         <Tiny.TinyText>
             标签页容器的宽度是固定的，在初始样式中就写明的。此时，可视标签页不一定是全部展现出来的。
         </Tiny.TinyText>
