@@ -39,6 +39,7 @@ const Toast = () => {
             <Tiny.TinyButton onClick={() => { toast.sc('底部，成功提示', { position: 'bottom' }) }}>bottom success</Tiny.TinyButton>
             <Tiny.TinyButton onClick={() => { toast.err('底部，错误提示', { position: 'bottom' }) }}>bottom error</Tiny.TinyButton>
             <Tiny.TinyButton onClick={() => { toast.warn('底部，警告提示', { position: 'bottom' }) }}>bottom warn</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => {toast.default(null, {during: 3})}}>top null</Tiny.TinyButton>
         </div>
         <Tiny.TinyTitle2 title='上下文轻提示' />
         <Tiny.TinyText>

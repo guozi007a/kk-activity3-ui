@@ -1,11 +1,11 @@
 /** 全局轻提示 */
 import { createRoot } from "react-dom/client";
-import { NotifyProp, GlobalConfig } from './interface.config'
+import { POSITION, DURING, ToastType, OpenType } from './interface.config'
 import Notify from "./Notify";
 
 let uniqueKey = 0
 
-const open = (content?: string | React.ReactNode, config?: NotifyProp) => {
+const open: OpenType = (content, config) => {
     document.getElementById('__toast')?.remove()
 
     const div = document.createElement('div')
@@ -27,23 +27,26 @@ const open = (content?: string | React.ReactNode, config?: NotifyProp) => {
     uniqueKey++
 }
 
-export const toast = {
+export const toast: ToastType = {
     // 全局配置
-    config: {} as GlobalConfig,
-    default(content?: string | React.ReactNode, localConfig?: GlobalConfig) {
-        open(content, { type: 'default', ...this.config, ...localConfig })
+    config: {
+        during: DURING,
+        position: POSITION,
     },
-    info(content?: string | React.ReactNode, localConfig?: GlobalConfig) {
-        open(content, { type: 'info', ...this.config, ...localConfig })
+    default(content, localConfig) {
+        open(content, { ...this.config, ...localConfig, type: 'default' })
     },
-    sc(content?: string | React.ReactNode, localConfig?: GlobalConfig) {
-        open(content, { type: 'sc', ...this.config, ...localConfig })
+    info(content, localConfig) {
+        open(content, { ...this.config, ...localConfig, type: 'info' })
     },
-    err(content?: string | React.ReactNode, localConfig?: GlobalConfig) {
-        open(content, { type: 'err', ...this.config, ...localConfig })
+    sc(content, localConfig) {
+        open(content, { ...this.config, ...localConfig, type: 'sc' })
     },
-    warn(content?: string | React.ReactNode, localConfig?: GlobalConfig) {
-        open(content, { type: 'warn', ...this.config, ...localConfig })
+    err(content, localConfig) {
+        open(content, { ...this.config, ...localConfig, type: 'err' })
+    },
+    warn(content, localConfig) {
+        open(content, { ...this.config, ...localConfig, type: 'warn' })
     },
 }
 
