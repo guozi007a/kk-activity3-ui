@@ -23,22 +23,22 @@ const Toast = () => {
         </Tiny.TinyText>
         <Tiny.TinyTitle2 title='效果展示' />
         <div className={styles.btns}>
-            <button onClick={() => { toast.default('顶部，默认提示', { position: 'top' }) }}>top default</button>
-            <button onClick={() => { toast.info('顶部，普通提示', { position: 'top' }) }}>top info</button>
-            <button onClick={() => { toast.sc('顶部，成功提示', { position: 'top' }) }}>top success</button>
-            <button onClick={() => { toast.err('顶部，错误提示', { position: 'top' }) }}>top error</button>
-            <button onClick={() => { toast.warn('顶部，警告提示', { position: 'top' }) }}>top warn</button>
-            <button onClick={() => { showToast('恭喜你获得一个大逼兜！') }}>showToast</button>
-            <button onClick={() => { toast.default('居中，默认提示') }}>center default</button>
-            <button onClick={() => { toast.info('居中，普通提示') }}>center info</button>
-            <button onClick={() => { toast.sc('居中，成功提示') }}>center success</button>
-            <button onClick={() => { toast.err('居中，错误提示') }}>center error</button>
-            <button onClick={() => { toast.warn('居中，警告提示') }}>center warn</button>
-            <button onClick={() => { toast.default('底部，默认提示', { position: 'bottom' }) }}>bottom default</button>
-            <button onClick={() => { toast.info('底部，普通提示', { position: 'bottom' }) }}>bottom info</button>
-            <button onClick={() => { toast.sc('底部，成功提示', { position: 'bottom' }) }}>bottom success</button>
-            <button onClick={() => { toast.err('底部，错误提示', { position: 'bottom' }) }}>bottom error</button>
-            <button onClick={() => { toast.warn('底部，警告提示', { position: 'bottom' }) }}>bottom warn</button>
+            <Tiny.TinyButton onClick={() => { toast.default('顶部，默认提示', { position: 'top' }) }}>top default</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.info('顶部，普通提示', { position: 'top' }) }}>top info</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.sc('顶部，成功提示', { position: 'top' }) }}>top success</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.err('顶部，错误提示', { position: 'top' }) }}>top error</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.warn('顶部，警告提示', { position: 'top' }) }}>top warn</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { showToast('恭喜你获得一个大逼兜！') }}>showToast</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.default('居中，默认提示') }}>center default</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.info('居中，普通提示') }}>center info</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.sc('居中，成功提示') }}>center success</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.err('居中，错误提示') }}>center error</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.warn('居中，警告提示') }}>center warn</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.default('底部，默认提示', { position: 'bottom' }) }}>bottom default</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.info('底部，普通提示', { position: 'bottom' }) }}>bottom info</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.sc('底部，成功提示', { position: 'bottom' }) }}>bottom success</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.err('底部，错误提示', { position: 'bottom' }) }}>bottom error</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { toast.warn('底部，警告提示', { position: 'bottom' }) }}>bottom warn</Tiny.TinyButton>
         </div>
         <Tiny.TinyTitle2 title='上下文轻提示' />
         <Tiny.TinyText>
@@ -51,20 +51,20 @@ const Toast = () => {
         { contextHolder }
         <div className={styles.btns}>
         <button onClick={() => { api.default('顶部，默认提示') }}>top default</button>
-            <button onClick={() => { api.info('顶部，普通提示') }}>top info</button>
-            <button onClick={() => { api.sc('顶部，成功提示') }}>top success</button>
-            <button onClick={() => { api.err('顶部，错误提示') }}>top error</button>
-            <button onClick={() => { api.warn('顶部，警告提示') }}>top warn</button>
-            <button onClick={() => { api.default('居中，默认提示', { position: 'center' }) }}>center default</button>
-            <button onClick={() => { api.info('居中，普通提示', { position: 'center' }) }}>center info</button>
-            <button onClick={() => { api.sc('居中，成功提示', { position: 'center' }) }}>center success</button>
-            <button onClick={() => { api.err('居中，错误提示', { position: 'center' }) }}>center error</button>
-            <button onClick={() => { api.warn('居中，警告提示', { position: 'center' }) }}>center warn</button>
-            <button onClick={() => { api.default('底部，默认提示', { position: 'bottom' }) }}>bottom default</button>
-            <button onClick={() => { api.info('底部，普通提示', { position: 'bottom' }) }}>bottom info</button>
-            <button onClick={() => { api.sc('底部，成功提示', { position: 'bottom' }) }}>bottom success</button>
-            <button onClick={() => { api.err('底部，错误提示', { position: 'bottom' }) }}>bottom error</button>
-            <button onClick={() => { api.warn('底部，警告提示', { position: 'bottom' }) }}>bottom warn</button>
+            <Tiny.TinyButton onClick={() => { api.info('顶部，普通提示') }}>top info</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { api.sc('顶部，成功提示') }}>top success</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { api.err('顶部，错误提示') }}>top error</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { api.warn('顶部，警告提示') }}>top warn</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { api.default('居中，默认提示', { position: 'center' }) }}>center default</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { api.info('居中，普通提示', { position: 'center' }) }}>center info</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { api.sc('居中，成功提示', { position: 'center' }) }}>center success</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { api.err('居中，错误提示', { position: 'center' }) }}>center error</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { api.warn('居中，警告提示', { position: 'center' }) }}>center warn</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { api.default('底部，默认提示', { position: 'bottom' }) }}>bottom default</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { api.info('底部，普通提示', { position: 'bottom' }) }}>bottom info</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { api.sc('底部，成功提示', { position: 'bottom' }) }}>bottom success</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { api.err('底部，错误提示', { position: 'bottom' }) }}>bottom error</Tiny.TinyButton>
+            <Tiny.TinyButton onClick={() => { api.warn('底部，警告提示', { position: 'bottom' }) }}>bottom warn</Tiny.TinyButton>
         </div>
     </div>
 }

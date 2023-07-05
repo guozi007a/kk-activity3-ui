@@ -51,3 +51,13 @@ export const TinyImg = ({ url, position = 'left' }: TinyImgType) => {
         <img src={url} alt="" />
     </div>
 }
+
+interface TinyButtonProp {
+    children?: string | React.ReactNode
+    onClick?: () => void
+}
+export const TinyButton = ({ children, onClick }: TinyButtonProp) => {
+    return <button className={styles.tinybtn} onClick={onClick}>
+        {children}
+    </button>
+}
