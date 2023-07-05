@@ -11,6 +11,7 @@ const Badge = lazy(() => import('~/pages/Badge'))
 const Progress = lazy(() => import('~/pages/Progress'))
 const TurnPage = lazy(() => import('~/pages/TurnPage'))
 const Toast = lazy(() => import('~/pages/Toast'))
+const HoverPop = lazy(() => import('~/pages/HoverPop'))
 
 export const ele: RouteObject[] = [
     {
@@ -48,6 +49,10 @@ export const ele: RouteObject[] = [
             {
                 path: 'toast',
                 element: gaurd(Toast)
+            },
+            {
+                path: 'hover-pop',
+                element: gaurd(HoverPop)
             },
         ]
     },
