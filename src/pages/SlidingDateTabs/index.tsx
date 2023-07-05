@@ -6,7 +6,9 @@ import ViewCode from '~/components/ViewCode'
 import DateSwitchTabs, { ParamType } from '~/components/DateSwitchTabs'
 import { useState } from 'react'
 import { dateTabsCodes } from '~/config/dateTabsCodes'
+import { dateTabsFixedCodes } from '~/config/dateTabsFixedCodes'
 import { natureREG as REG } from '~/utils/kkUtils'
+import DateTabsFixed from '~/components/DateTabsFixed'
 
 const DATE_REG = /^(202)[3-9]\/(0|1)[0-9]\/[0-3][0-9]$/
 
@@ -53,6 +55,10 @@ const SlidingDateTabs = () => {
         </Tiny.TinyText>
         <Tiny.TinyText>
             IOS不支持通过<Tiny.TinyTag tag='-' />连接的年月日时间格式，也不支持毫秒级以下的时间戳，在使用<Tiny.TinyTag tag='new Date' />方法时需要避免此处Bug。
+        </Tiny.TinyText>
+        <Tiny.TinyTitle2 title='弹性式' />
+        <Tiny.TinyText>
+            标签页容器的宽度是由可视标签页个数决定的。此时，每个可视标签页都是完整展现出来的。
         </Tiny.TinyText>
         <Tiny.TinyTitle2 title='效果展示' />
         <div className={styles.result_wrap}>
@@ -221,6 +227,46 @@ const SlidingDateTabs = () => {
             </tbody>
         </Controller>
         <ViewCode codes={dateTabsCodes} />
+        <Tiny.TinyTitle2 title='固定式' />
+        <Tiny.TinyText>
+            标签页容器的宽度是固定的，在初始样式中就写明的。此时，可视标签页不一定是全部展现出来的。
+        </Tiny.TinyText>
+        <Tiny.TinyTitle2 title='效果展示' />
+        <DateTabsFixed
+            start={1688439600000}
+            end={1689091200000}
+            onDate={handleDate}
+        />
+        <Tiny.TinyTitle2 title='控制器' />
+        <Controller>
+            <tbody>
+                <tr>
+                    <td>开始时间</td>
+                    <td>start</td>
+                    <td>number</td>
+                    <td>1688439600000</td>
+                    <td>同上</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>结束时间</td>
+                    <td>end</td>
+                    <td>number</td>
+                    <td>1689091200000</td>
+                    <td>同上</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>获取tab日期数据</td>
+                    <td>onDate</td>
+                    <td>{'(param?: ParamType) => void'}</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>同上</td>
+                </tr>
+            </tbody>
+        </Controller>
+        <ViewCode codes={dateTabsFixedCodes} />
     </div>
 }
 
