@@ -12,6 +12,7 @@ const Progress = lazy(() => import('~/pages/Progress'))
 const TurnPage = lazy(() => import('~/pages/TurnPage'))
 const Toast = lazy(() => import('~/pages/Toast'))
 const HoverPop = lazy(() => import('~/pages/HoverPop'))
+const RankList = lazy(() => import('~/pages/RankList'))
 
 export const ele: RouteObject[] = [
     {
@@ -53,6 +54,10 @@ export const ele: RouteObject[] = [
             {
                 path: 'hover-pop',
                 element: gaurd(HoverPop)
+            },
+            {
+                path: 'rank-list',
+                element: gaurd(RankList)
             },
         ]
     },

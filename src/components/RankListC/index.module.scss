@@ -1,0 +1,108 @@
+
+.rank_list {
+    position: relative;
+    width: 60rem;
+    background-image: linear-gradient(#FFD9C9, #FFF1E2);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-bottom: 2rem;
+    
+    .rank_header {
+        height: 5.2rem;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        padding-left: 4rem;
+        font-weight: 500;
+        font-size: 2rem;
+        font-family: var(--font-1);
+        background-image: linear-gradient(#FFDE81, #FF6F70);
+        color: var(--primary-light);
+
+        .h_1 {
+            width: 4rem;
+        }
+        .h_2 {
+            width: 6rem;
+            margin-left: 10rem;
+        }
+        .h_3 {
+            width: 10rem;
+            margin-left: 20rem;
+        }
+    }
+
+    .rank_main {
+        position: relative;
+        height: 50rem;
+        overflow: hidden;
+        margin-top: 2rem;
+
+        .rank_ul {
+            width: 92%;
+            margin: auto;
+
+            .rank_li {
+                width: 100%;
+                height: 8rem;
+                display: flex;
+                align-items: center;
+                box-sizing: border-box;
+                padding-left: 3rem;
+                background-color: var(--primary-light);
+                margin-top: 1rem;
+                border-radius: 0.6rem;
+
+                &:nth-child(1) {
+                    margin-top: 0;
+                }
+
+                .sort {
+                    width: 4rem;
+                }
+
+                .avatar {
+                    position: relative;
+                    display: block;
+                    width: 5rem;
+                    height: 5rem;
+                    border-radius: 50%;
+                    border: 0.2rem solid #ffa604;
+                    margin-left: 6rem;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+
+                    .live {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 1.2rem;
+                        background: url('https://rescdn.kktv8.com/kk-web-res/activity3/play_2376/live.png') no-repeat center center;
+                        background-size: contain;
+                    }
+                }
+
+                .nick {
+                    width: 12rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    margin-left: 1.5rem;
+                }
+
+                .score {
+                    width: 18rem;
+                    margin-left: 4.5rem;
+                    text-align: center;
+                    color: #FFA178;
+                }
+            }
+        }
+    }
+}
