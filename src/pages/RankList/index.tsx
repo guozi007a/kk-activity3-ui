@@ -6,6 +6,7 @@ import ViewCode from '~/components/ViewCode'
 import { useState, useId } from 'react'
 import RankListC from '~/components/RankListC'
 import { natureREG } from '~/utils/kkUtils'
+import { toast } from '~/components/ToastGlobal'
 
 const RankList = () => {
 
@@ -68,7 +69,13 @@ const RankList = () => {
                     <td>
                         <button
                             onClick={() => {
-                               setTotal(count ? parseInt(count) : 20)
+                                const num = count ? parseInt(count) : 0
+                                if (num === 10 || num === 20 || num === 30) {
+                                    toast.sc('操作成功！')
+                                    setTotal(num)
+                                    return
+                                }
+                                toast.warn('total通常取10、20或者30~')
                             }}
                         >确定</button>
                     </td>
