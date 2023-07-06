@@ -3,6 +3,53 @@ import styles from './index.module.scss'
 import * as Tiny from '~/components/Tinys'
 import { toast, showToast } from '~/components/ToastGlobal'
 import useToast from '~/components/ToastHooks'
+import { MdPreview } from 'md-editor-rt'
+
+const md1 = `
+\`\`\`jsx
+// 引入
+import { toast, showToast } from '~/components/ToastGlobal'
+
+// 默认模式，无配置项
+showToast('hello world')
+
+// 如下可配置，配置项postion during
+// 默认提示
+toast.default('hello world', { position: 'top', during: 3 })
+// 普通提示
+toast.info('hello world')
+// 成功提示
+toast.sc('hello world')
+// 失败提示
+toast.err('hello world')
+// 警告模式
+toast.warn('hello world')
+\`\`\`
+`
+
+const md2 = `
+\`\`\`jsx
+// 引入
+import useToast from '~/components/ToastHooks'
+
+// 不进行全局配置
+const [toast, textHolder] = useToast()
+// 进行全局配置
+const [toast, textHolder] = useToast({  position: 'top', during: 3 })
+
+// 可进行局部配置，会覆盖默认配置和全局配置
+// 默认提示
+toast.default('hello world', { position: 'top', during: 3 })
+// 普通提示
+toast.info('hello world')
+// 成功提示
+toast.sc('hello world')
+// 失败提示
+toast.err('hello world')
+// 警告模式
+toast.warn('hello world')
+\`\`\`
+`
 
 const Toast = () => {
 
@@ -41,6 +88,16 @@ const Toast = () => {
             <Tiny.TinyButton onClick={() => { toast.warn('底部，警告提示', { position: 'bottom' }) }}>bottom warn</Tiny.TinyButton>
             <Tiny.TinyButton onClick={() => {toast.default(null, {during: 3})}}>top null</Tiny.TinyButton>
         </div>
+        <Tiny.TinyTitle2 title='如何使用' />
+        <div>
+            {/* 纯渲染模式 */}
+            <MdPreview
+                editorId={'id1'}
+                modelValue={md1}
+                showCodeRowNumber={true}
+            />
+        </div>
+
         <Tiny.TinyTitle1 title='上下文轻提示' />
         <Tiny.TinyText>
             相对于全局提示来说，上下文轻提示主要特点在于它调用了上下文的<Tiny.TinyTag tag='contextHolder' />，只显示在当前页面，切换路由，就不会显示该提示。
@@ -66,6 +123,15 @@ const Toast = () => {
             <Tiny.TinyButton onClick={() => { api.sc('底部，成功提示', { position: 'bottom' }) }}>bottom success</Tiny.TinyButton>
             <Tiny.TinyButton onClick={() => { api.err('底部，错误提示', { position: 'bottom' }) }}>bottom error</Tiny.TinyButton>
             <Tiny.TinyButton onClick={() => { api.warn('底部，警告提示', { position: 'bottom' }) }}>bottom warn</Tiny.TinyButton>
+        </div>
+        <Tiny.TinyTitle2 title='如何使用' />
+        <div>
+            {/* 纯渲染模式 */}
+            <MdPreview
+                editorId={'id2'}
+                modelValue={md2}
+                showCodeRowNumber={true}
+            />
         </div>
     </div>
 }
