@@ -48,6 +48,12 @@ toast.sc('hello world')
 toast.err('hello world')
 // 警告模式
 toast.warn('hello world')
+
+//jsx
+return <>
+    // ...
+    {textHolder}
+</>
 \`\`\`
 `
 
