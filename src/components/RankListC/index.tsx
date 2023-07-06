@@ -73,11 +73,16 @@ const rankList = [actorList, userList]
 
 interface PropType {
     type?: number
+    total?: number
 }
 
 const RankListC = ({
     type = 0,
+    total = 20,
 }: PropType) => {
+
+    const renderList = rankList[type].slice(0, total)
+
     return <div className={styles.rank_list}>
         <header className={styles.rank_header}>
             <p className={styles.h_1}>排名</p>
@@ -88,7 +93,7 @@ const RankListC = ({
             <Scrollbars autoHide>
                 <ul className={styles.rank_ul}>
                     {
-                        rankList[type].map((v, i) => {
+                        renderList.slice(0, total).map((v, i) => {
                             return <li key={i} className={styles.rank_li}>
                                 <p className={styles.sort}>{i + 1}</p>
                                 <a className={styles.avatar}
