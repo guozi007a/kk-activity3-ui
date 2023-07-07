@@ -5,7 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
     plugins: [react()],
     server: {
-        port: 3001
+        port: 3001,
+        proxy: {
+            '/callback/github': 'http://localhost:4000'
+        }
     },
     resolve: {
         alias: {
