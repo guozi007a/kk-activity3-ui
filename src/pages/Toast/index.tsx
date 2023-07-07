@@ -98,7 +98,6 @@ const Toast = () => {
         <div>
             {/* 纯渲染模式 */}
             <MdPreview
-                editorId={'id1'}
                 modelValue={md1}
                 showCodeRowNumber={true}
             />

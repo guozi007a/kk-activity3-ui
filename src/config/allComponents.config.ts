@@ -9,6 +9,7 @@ const toastImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*Ct7bT7r
 const hoverPopImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*6RWNQ78WtvEAAAAAAAAAAAAADrJ8AQ/original'
 const ranklistImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*EYuhSpw1iSwAAAAAAAAAAAAADrJ8AQ/original'
 const lotteryListImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*FbOCS6aFMeUAAAAAAAAAAAAADrJ8AQ/original'
+const prixSwiperImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*KeyQQL5iKkkAAAAAAAAAAAAADrJ8AQ/original'
 
 export const viewComponents = [
     { name: '奖励预览列表', component: 'AwardPreviewList', url: awardPreviewListImg, route: 'award-preview-list' },
@@ -21,4 +22,5 @@ export const viewComponents = [
     { name: '悬浮提示框', component: 'HoverPop', url: hoverPopImg, route: 'hover-pop' },
     { name: '榜单列表', component: 'RankList', url: ranklistImg, route: 'rank-list' },
     { name: '连抽奖励列表', component: 'LotteryList', url: lotteryListImg, route: 'lottery-list' },
+    { name: '大奖轮播', component: 'PrixSwiper', url: prixSwiperImg, route: 'prix-swiper' },
 ]

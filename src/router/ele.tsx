@@ -14,6 +14,7 @@ const Toast = lazy(() => import('~/pages/Toast'))
 const HoverPop = lazy(() => import('~/pages/HoverPop'))
 const RankList = lazy(() => import('~/pages/RankList'))
 const LotteryList = lazy(() => import('~/pages/LotteryList'))
+const PrixSwiper = lazy(() => import('~/pages/PrixSwiper'))
 
 export const ele: RouteObject[] = [
     {
@@ -63,6 +64,10 @@ export const ele: RouteObject[] = [
             {
                 path: 'lottery-list',
                 element: gaurd(LotteryList)
+            },
+            {
+                path: 'prix-swiper',
+                element: gaurd(PrixSwiper)
             },
         ]
     },
