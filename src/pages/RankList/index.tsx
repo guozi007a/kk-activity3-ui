@@ -7,6 +7,7 @@ import { useState, useId } from 'react'
 import RankListC from '~/components/RankListC'
 import { natureREG } from '~/utils/kkUtils'
 import { toast } from '~/components/ToastGlobal'
+import { rankListCodes } from '~/config/rankListCodes'
 
 const RankList = () => {
 
@@ -15,6 +16,8 @@ const RankList = () => {
     const _id = useId()
     const [count, setCount] = useState('')
     const [total, setTotal] = useState(20)
+    const [realVal, setRealVal] = useState('')
+    const [realCount, setRealCount] = useState(0)
 
     return <div className={styles.rank_list}>
         <Tiny.TinyTitle1 title='榜单列表' />
@@ -30,6 +33,7 @@ const RankList = () => {
             <RankListC
                 type={type}
                 total={total}
+                realCount={realCount}
             />
         </div>
         <Tiny.TinyTitle2 title='控制器' />
@@ -61,7 +65,7 @@ const RankList = () => {
                             onChange={e => {
                                 const val = e.target.value
                                 if (val === '' || natureREG.test(val)) {
-                                    setCount(e.target.value)
+                                    setCount(val)
                                 }
                             }}
                         />
@@ -81,9 +85,39 @@ const RankList = () => {
                     </td>
                     <td>count通常会取10、20或者30</td>
                 </tr>
+                <tr>
+                    <td>实际条数</td>
+                    <td>realCount</td>
+                    <td>number</td>
+                    <td>0</td>
+                    <td>
+                        <input type="text" value={realVal}
+                            onChange={e => {
+                                const val = e.target.value
+                                if (val === '' || natureREG.test(val)) {
+                                    setRealVal(val)
+                                }
+                            }}
+                        />
+                    </td>
+                    <td>
+                        <button
+                            onClick={() => {
+                                const num = realVal ? parseInt(realVal) : 0
+                                if (num <= total) {
+                                    toast.sc('操作成功！')
+                                    setRealCount(num)
+                                    return
+                                }
+                                toast.warn('realCount不应超过total~')
+                            }}
+                        >确定</button>
+                    </td>
+                    <td>realCount不应超过total</td>
+                </tr>
             </tbody>
         </Controller>
-        <ViewCode />
+        <ViewCode codes={rankListCodes} />
     </div>
 }
 

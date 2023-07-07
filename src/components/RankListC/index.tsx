@@ -2,8 +2,17 @@
 import styles from './index.module.scss'
 import Scrollbars from 'react-custom-scrollbars-2'
 import { kkUtils, preRoom } from '~/utils/kkUtils'
+import { useMemo } from 'react'
 
-const actorList = [
+interface ListType {
+    userId: number
+    nickname: string
+    portrait: string
+    isLive: boolean
+    score: number
+}
+
+const actorList: ListType[] = [
     { userId: 10000338, nickname: '道具噶对佛法佛哦', portrait: '', isLive: false, score: 5470893, },
     { userId: 10000338, nickname: '打法都给人婆婆', portrait: '/portrait/20200112/3/140981192_5037489.jpg', isLive: false, score: 1572391, },
     { userId: 10000338, nickname: '飞机带几个我【我大规模', portrait: '', isLive: true, score: 1000056, },
@@ -36,7 +45,7 @@ const actorList = [
     { userId: 10000338, nickname: '蛋糕胚强迫文凭大门', portrait: '', isLive: false, score: 216, },
 ]
 
-const userList = [
+const userList: ListType[] = [
     { userId: 10000339, nickname: '🍊4030狮子1', portrait: '/portrait/20220207/9/154968679_1458811.jpg', isLive: false, score: 3221983, },
     { userId: 10000339, nickname: 'test-blogg', portrait: '', isLive: false, score: 2627415, },
     { userId: 10000339, nickname: '.🍊4024狮子2', portrait: '', isLive: false, score: 2376548, },
@@ -74,14 +83,18 @@ const rankList = [actorList, userList]
 interface PropType {
     type?: number
     total?: number
+    realCount?: number
 }
 
 const RankListC = ({
     type = 0,
     total = 20,
+    realCount = 0,
 }: PropType) => {
 
-    const renderList = rankList[type].slice(0, total)
+    const renderList = useMemo<ListType[]>(() => { 
+        return [...rankList[type].slice(0, realCount), ...new Array(total - realCount).fill({})]
+    }, [type, total, realCount])
 
     return <div className={styles.rank_list}>
         <header className={styles.rank_header}>
@@ -93,7 +106,7 @@ const RankListC = ({
             <Scrollbars autoHide>
                 <ul className={styles.rank_ul}>
                     {
-                        renderList.slice(0, total).map((v, i) => {
+                        renderList.map((v, i) => {
                             return <li key={i} className={styles.rank_li}>
                                 <p className={styles.sort}>{i + 1}</p>
                                 <a className={styles.avatar}
