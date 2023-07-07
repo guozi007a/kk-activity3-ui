@@ -13,6 +13,7 @@ const TurnPage = lazy(() => import('~/pages/TurnPage'))
 const Toast = lazy(() => import('~/pages/Toast'))
 const HoverPop = lazy(() => import('~/pages/HoverPop'))
 const RankList = lazy(() => import('~/pages/RankList'))
+const LotteryList = lazy(() => import('~/pages/LotteryList'))
 
 export const ele: RouteObject[] = [
     {
@@ -58,6 +59,10 @@ export const ele: RouteObject[] = [
             {
                 path: 'rank-list',
                 element: gaurd(RankList)
+            },
+            {
+                path: 'lottery-list',
+                element: gaurd(LotteryList)
             },
         ]
     },
