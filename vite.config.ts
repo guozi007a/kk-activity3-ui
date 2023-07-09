@@ -7,6 +7,7 @@ export default defineConfig({
     server: {
         port: 3001,
         proxy: {
+            '/login/github': 'http://localhost:4000',
             '/callback/github': 'http://localhost:4000'
         }
     },

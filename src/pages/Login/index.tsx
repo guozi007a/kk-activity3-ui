@@ -6,7 +6,8 @@ const Login = () => {
 
     return <div className={styles.login}>
         <Tiny.TinyButton>
-            <a href="https://github.com/login/oauth/authorize?scope=user&client_id=95a6cf45f087a9b6dbe2&state=big_deal">Github登录</a>
+            {/* <a href="https://github.com/login/oauth/authorize?scope=user&client_id=95a6cf45f087a9b6dbe2&state=big_deal">Github登录</a> */}
+            <a href="/login/github">Github登录</a>
         </Tiny.TinyButton>
     </div>
 }
