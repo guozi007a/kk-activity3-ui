@@ -1,8 +1,8 @@
 /** 登录页 */
 import styles from './index.module.scss'
-import * as Tiny from '~/components/Tinys'
 import { logo1 } from '~/config/imgUrl.config'
 import { useId } from 'react'
+import AliIcon from '~/components/AliIcon'
 
 const Login = () => {
 
@@ -32,8 +32,17 @@ const Login = () => {
                 className={styles.yourname}
             />
         </label>
+        <button className={styles.submit}>登录</button>
         <div className={styles.line}></div>
-        <p className={styles.third}>三方登录：</p>
+        <p className={styles.third}>三方登录</p>
+        <footer className={styles.third_footer}>
+            <a href='/login/github' className={styles.github_icon} title='Github登录'>
+                <AliIcon icon='icon-github1' />
+            </a>
+            <a href='/login/gitee' className={styles.gitee_icon} title='Gitee登录'>
+                <AliIcon icon='icon-gitee' />
+            </a>
+        </footer>
     </div>
 }
 
