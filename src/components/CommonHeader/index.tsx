@@ -1,11 +1,9 @@
 /** 通用头部栏 */
 import styles from './index.module.scss'
 import AliIcon from '~/components/AliIcon'
-import useUserInfo from '~/hooks/useUserInfo'
 
 const CommonHeader = () => {
 
-    const userInfo = useUserInfo()
 
     return <header className={styles.common_header}>
         <div className={styles.sit}></div>
@@ -20,7 +18,7 @@ const CommonHeader = () => {
                 <AliIcon icon='icon-github' />
             </a>
             <div className={styles.avatar}>
-                <img src={userInfo.avatarUrl} alt="" />
+                <img src='' alt="" />
             </div>
         </div>
     </header>
