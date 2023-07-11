@@ -34,7 +34,7 @@ const Login = () => {
         </label>
         <button className={styles.submit}>登录</button>
         <div className={styles.line}></div>
-        <p className={styles.third}>三方登录</p>
+        <p className={styles.third}>使用第三方登录</p>
         <footer className={styles.third_footer}>
             <a href='/login/github' className={styles.github_icon} title='Github登录'>
                 <AliIcon icon='icon-github1' />
