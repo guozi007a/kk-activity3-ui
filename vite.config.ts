@@ -7,8 +7,8 @@ export default defineConfig({
     server: {
         port: 3001,
         proxy: {
-            '/login/github': 'http://localhost:4000',
-            '/callback/github': 'http://localhost:4000'
+            '/login/github': 'http://localhost:5501',
+            '/callback/github': 'http://localhost:5501'
         }
     },
     resolve: {
