@@ -4,10 +4,20 @@ import { TinyTitle1, TinyText, TinyTag, TinyGrid } from '~/components/Tinys'
 import { viewComponents } from '~/config/allComponents.config'
 import { useNavigate } from 'react-router-dom'
 import { Scrollbars } from 'react-custom-scrollbars-2'
+import { useEffect } from 'react'
 
 const OverView = () => {
 
     const navigate = useNavigate()
+
+    useEffect(() => { 
+        fetch('/user', {
+            credentials: 'include',
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
+    }, [])
 
     return <div className={styles.overview}>
         <TinyTitle1 title='组件总览' />
