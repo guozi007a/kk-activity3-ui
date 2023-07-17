@@ -19,6 +19,15 @@ export const KK_UI_USER_INFO = "kk_ui_user_info"
 // 判断自然数正则
 export const natureREG = /^\d+$/
 
+// 取url参数值
+export const getQueryString = (name: string): string => {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.slice(1).match(reg);
+    if (r != null)
+        return encodeURIComponent(r[2]);
+    return "";
+}
+
 // 默认头像
 export const defaultAvatar = 'https://rescdn.kktv8.com/kk-web-res/activity3/play_2310/w-logo1.png'
 

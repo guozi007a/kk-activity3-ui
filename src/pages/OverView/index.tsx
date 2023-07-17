@@ -5,18 +5,27 @@ import { viewComponents } from '~/config/allComponents.config'
 import { useNavigate } from 'react-router-dom'
 import { Scrollbars } from 'react-custom-scrollbars-2'
 import { useEffect } from 'react'
+import { KK_UI_USER_INFO, getQueryString } from "~/utils/kkUtils";
 
 const OverView = () => {
 
     const navigate = useNavigate()
 
-    useEffect(() => { 
-        fetch('/user', {
-            credentials: 'include',
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err))
+    useEffect(() => {
+        if (getQueryString('login')) {
+            fetch('/user', {
+                credentials: 'include',
+            })
+            .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.data) {
+                        localStorage.setItem(KK_UI_USER_INFO, JSON.stringify(data.data))
+                        window.location.href='/'
+                    }
+                })
+                .catch(err => console.log(err))
+        }
     }, [])
 
     return <div className={styles.overview}>

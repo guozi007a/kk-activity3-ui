@@ -10,6 +10,7 @@ export default defineConfig({
             '/login/github': 'http://localhost:5501',
             '/callback/github': 'http://localhost:5501',
             '/user': 'http://localhost:5501',
+            '/logout': 'http://localhost:5501',
         }
     },
     resolve: {

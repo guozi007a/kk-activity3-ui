@@ -2,7 +2,7 @@
 import { Suspense, FC, useEffect } from "react"
 import { useNavigate } from 'react-router-dom';
 import Spin from "~/components/Spin";
-import { KK_UI_USER_INFO } from "~/utils/kkUtils";
+import { KK_UI_USER_INFO, getQueryString } from "~/utils/kkUtils";
 
 interface PropType {
     Component: FC;
@@ -15,15 +15,17 @@ const GaurdRouter = ({ Component }: PropType) => {
     useEffect(() => {
         const userInfo = localStorage.getItem(KK_UI_USER_INFO)
 
-        if (!userInfo) {
+        if ((location.pathname !== '/' && location.pathname !== '/overview') && !userInfo) {
             navigate("/login")
             return
         }
         
         if (location.pathname === '/') {
-            navigate('/overview', { replace: true })
+            getQueryString('login')
+                ? navigate('/overview?login=true', { replace: true })
+                : navigate('/overview', { replace: true })
         }
-    }, [location.pathname])
+    }, [location.href])
 
     return <Suspense fallback={<Spin />}>
         <Component />
