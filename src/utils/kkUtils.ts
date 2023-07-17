@@ -13,6 +13,9 @@ export const getImgByUrlOrId = (url?: string, id?: number): string => {
 // 设备是否为手机端
 export const isMobile = /Android|webOS|iPhone|iPod|BlackBerry|ipad/i.test(navigator.userAgent);
 
+// 存储用户信息
+export const KK_UI_USER_INFO = "kk_ui_user_info"
+
 // 判断自然数正则
 export const natureREG = /^\d+$/
 
