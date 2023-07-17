@@ -98,12 +98,26 @@ $gitpx: 3.2rem;
                 border: 1px solid var(--gray-4);
                 border-radius: 0.6rem;
                 
-                .logout {
+                .info_item {
+                    width: 100%;
                     text-align: center;
                     font-size: 1.4rem;
                     box-sizing: border-box;
-                    padding: 0.5rem 0;
-                    cursor: pointer;
+                    padding: 0.5rem 1rem;
+                    white-space: nowrap;
+
+                    &.nickname {
+                        font-family: var(--font-1);
+                        font-weight: 500;
+                        max-width: 12rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        cursor: default;
+                    }
+
+                    &.logout {
+                        cursor: pointer;
+                    }   
 
                     &:hover {
                         background-color: var(--gray-4);

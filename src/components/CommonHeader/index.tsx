@@ -26,8 +26,9 @@ const CommonHeader = () => {
                 localStorage.getItem(KK_UI_USER_INFO)
                     ? <div className={styles.avatar}>
                         <img src={userInfo.avatar_url || defaultAvatar} alt="" />
-                        <div className={styles.hover_profile}>
-                            <div className={styles.logout}
+                        <ul className={styles.hover_profile}>
+                            <li className={`${styles.info_item} ${styles.nickname}`}>hi, {userInfo.username} !</li>
+                            <li className={`${styles.info_item} ${styles.logout}`}
                                 onClick={() => {
                                     fetch("/logout")
                                         .then(res => res.json())
@@ -40,8 +41,8 @@ const CommonHeader = () => {
                                         })
                                         .catch(err => console.log(err))
                                 }}
-                            >退出登录</div>
-                        </div>
+                            >退出登录</li>
+                        </ul>
                     </div>
                     : <TinyButton
                         onClick={() => {
