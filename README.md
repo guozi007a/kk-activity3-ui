@@ -11,7 +11,10 @@ npm run dev
 ```
 This project is running at `http://localhost:3001/`
 
+
 # 后端验证
+
+建议使用`github`和`gitee`快捷登录，使用前请联系项目主管添加权限。
 
 `go@1.20x`
 
