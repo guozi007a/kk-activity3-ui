@@ -2,7 +2,8 @@
 import { Suspense, FC, useEffect } from "react"
 import { useNavigate } from 'react-router-dom';
 import Spin from "~/components/Spin";
-import { KK_UI_USER_INFO, getQueryString } from "~/utils/kkUtils";
+import { useInfoStore } from '~/store/useInfoStore'
+import { toast } from "~/components/ToastGlobal";
 
 interface PropType {
     Component: FC;
@@ -11,21 +12,28 @@ interface PropType {
 const GaurdRouter = ({ Component }: PropType) => {
 
     const navigate = useNavigate();
+    const userInfo = useInfoStore(state => state.userInfo)
 
     useEffect(() => {
-        const userInfo = localStorage.getItem(KK_UI_USER_INFO)
+        const path = location.pathname
 
-        if ((location.pathname !== '/' && location.pathname !== '/overview') && !userInfo) {
-            navigate("/login")
-            return
+        if (userInfo.isRefresh) {
+            if ((path !== '/' && path !== '/overview') && !userInfo.username) {
+                navigate("/login")
+                return
+            }
+    
+            if (!(path === '/' || path === '/overview') && !userInfo.access) {
+                toast.warn('抱歉，你没有访问权限~')
+                navigate('/overview')
+                return
+            }
         }
-        
-        if (location.pathname === '/') {
-            getQueryString('login')
-                ? navigate('/overview?login=true', { replace: true })
-                : navigate('/overview', { replace: true })
+
+        if (path === '/') {
+            navigate('/overview', { replace: true })
         }
-    }, [location.href])
+    }, [location.pathname, userInfo.isRefresh])
 
     return <Suspense fallback={<Spin />}>
         <Component />

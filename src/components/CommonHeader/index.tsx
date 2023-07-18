@@ -1,14 +1,27 @@
 /** 通用头部栏 */
 import styles from './index.module.scss'
 import AliIcon from '~/components/AliIcon'
-import { KK_UI_USER_INFO, defaultAvatar } from '~/utils/kkUtils'
 import { useNavigate } from 'react-router-dom'
 import { TinyButton } from '~/components/Tinys'
+import { useEffect } from 'react'
+import { useInfoStore } from '~/store/useInfoStore'
 
 const CommonHeader = () => {
 
-    const userInfo = localStorage.getItem(KK_UI_USER_INFO) ? JSON.parse(localStorage.getItem(KK_UI_USER_INFO) || "{}") : {}
     const navigate = useNavigate()
+    const userInfo = useInfoStore(state => state.userInfo)
+    const setUserInfo = useInfoStore(state => state.setUserInfo)
+
+    useEffect(() => { 
+        fetch('/user', {
+            credentials: 'include',
+        })
+        .then(res => res.json())
+            .then(data => {
+                setUserInfo({...data.data, isRefresh: true})
+            })
+            .catch(err => console.log(err))
+    }, [])
 
     return <header className={styles.common_header}>
         <div className={styles.sit}></div>
@@ -23,9 +36,9 @@ const CommonHeader = () => {
                 <AliIcon icon='icon-github' />
             </a>
             {
-                localStorage.getItem(KK_UI_USER_INFO)
+                userInfo.username
                     ? <div className={styles.avatar}>
-                        <img src={userInfo.avatar_url || defaultAvatar} alt="" />
+                        <img src={userInfo.avatar_url} alt="" />
                         <ul className={styles.hover_profile}>
                             <li className={`${styles.info_item} ${styles.nickname}`}>hi, {userInfo.username} !</li>
                             <li className={`${styles.info_item} ${styles.logout}`}
@@ -33,10 +46,9 @@ const CommonHeader = () => {
                                     fetch("/logout")
                                         .then(res => res.json())
                                         .then((data) => {
-                                            console.log(data)
                                             if (data.data) {
-                                                localStorage.removeItem(KK_UI_USER_INFO)
                                                 navigate('/', { replace: true })
+                                                setUserInfo()
                                             }
                                         })
                                         .catch(err => console.log(err))
