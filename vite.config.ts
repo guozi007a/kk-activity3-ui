@@ -1,18 +1,20 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+const BackEndOrigin = 'http://localhost:5501'
+
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [react()],
     server: {
         port: 3001,
         proxy: {
-            '/login/github': 'http://localhost:5501',
-            '/callback/github': 'http://localhost:5501',
-            '/login/gitee': 'http://localhost:5501',
-            '/callback/gitee': 'http://localhost:5501',
-            '/user': 'http://localhost:5501',
-            '/logout': 'http://localhost:5501',
+            '/login/github': BackEndOrigin,
+            '/callback/github': BackEndOrigin,
+            '/login/gitee': BackEndOrigin,
+            '/callback/gitee': BackEndOrigin,
+            '/user': BackEndOrigin,
+            '/logout': BackEndOrigin,
         }
     },
     resolve: {
