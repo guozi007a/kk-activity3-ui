@@ -9,6 +9,8 @@ export default defineConfig({
         proxy: {
             '/login/github': 'http://localhost:5501',
             '/callback/github': 'http://localhost:5501',
+            '/login/gitee': 'http://localhost:5501',
+            '/callback/gitee': 'http://localhost:5501',
             '/user': 'http://localhost:5501',
             '/logout': 'http://localhost:5501',
         }
