@@ -27,7 +27,7 @@ const Popup = () => {
         </Tiny.TinyText>
         <Tiny.TinyTitle2 title='何时使用' />
         <Tiny.TinyText>
-            点击按钮打开或通过通过某些接口条件进行展示。需要注意的是，需要弹出的组件，不能多处使用，且不能嵌套使用。
+            点击按钮打开或通过通过某些接口条件进行展示。需要注意的是，<Tiny.TinyTag tag='Portal' />遵循的是<Tiny.TinyTag tag='React' />树结构，要弹出的组件，最好不要嵌套在另一个弹出组件里。
         </Tiny.TinyText>
         <Tiny.TinyTitle2 title='效果展示' />
         <button className={styles.btn} onClick={handleOpen}>打开弹出框</button>
