@@ -14,7 +14,7 @@ This project is running at `http://localhost:3001/`
 
 # 后端验证
 
-建议使用`github`和`gitee`快捷登录，使用前请联系项目主管添加权限。
+建议使用`github`和`gitee`快捷登录，使用前请联系项目主管人员添加权限。
 
 `go@1.20x`
 
@@ -23,7 +23,7 @@ https://github.com/guozi007a/third-auth-go
 ```
 
 ```go
-go mode tidy
+go install
 
 go run ./main.go
 ```
