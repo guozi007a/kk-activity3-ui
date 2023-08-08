@@ -8,6 +8,7 @@
     font-size: 2.4rem;
     font-weight: 500;
     font-family: Avenir,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji',sans-serif;
+    margin: 2rem 0;
 }
 
 .tinytext {
@@ -94,6 +95,7 @@
     border: 1px solid var(--blue-2);
     background-color: var(--primary-light);
     color: var(--blue-2);
+    margin: 0 1rem;
     cursor: pointer;
     user-select: none;
 }
