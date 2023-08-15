@@ -1,0 +1,17 @@
+.scrollbar_wrap {
+    margin: 2rem auto;
+    
+    .demo {
+        position: relative;
+        width: 80rem;
+        height: 50rem;
+        overflow: hidden;
+
+        .demo_main {
+            width: 70rem;
+            height: 100rem;
+            margin: auto;
+            background-color: var(--blue-4);
+        }
+    }
+}
