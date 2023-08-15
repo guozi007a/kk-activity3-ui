@@ -10,8 +10,16 @@ const hoverPopImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*6RWN
 const ranklistImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*EYuhSpw1iSwAAAAAAAAAAAAADrJ8AQ/original'
 const lotteryListImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*FbOCS6aFMeUAAAAAAAAAAAAADrJ8AQ/original'
 const prixSwiperImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*KeyQQL5iKkkAAAAAAAAAAAAADrJ8AQ/original'
+const scrollBarImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*TBTSR4PyVmkAAAAAAAAAAAAADrJ8AQ/original'
 
-export const viewComponents = [
+interface ViewType<T> {
+    name: T
+    component: T
+    url: T
+    route: T
+}
+
+export const viewComponents: ViewType<string>[] = [
     { name: '奖励预览列表', component: 'AwardPreviewList', url: awardPreviewListImg, route: 'award-preview-list' },
     { name: '弹出框', component: 'Popup', url: popupImg, route: 'popup' },
     { name: '滑动式时间标签页', component: 'SlidingDateTabs', url: slidingDateTabsImg, route: 'sliding-date-tabs' },
@@ -23,4 +31,5 @@ export const viewComponents = [
     { name: '榜单列表', component: 'RankList', url: ranklistImg, route: 'rank-list' },
     { name: '连抽奖励列表', component: 'LotteryList', url: lotteryListImg, route: 'lottery-list' },
     { name: '大奖轮播', component: 'PrixSwiper', url: prixSwiperImg, route: 'prix-swiper' },
+    { name: '滚动条', component: 'Scrollbar', url: scrollBarImg, route: 'scroll-bar' },
 ]
