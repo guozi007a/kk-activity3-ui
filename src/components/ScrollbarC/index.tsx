@@ -80,7 +80,7 @@ const ScrollbarC = ({
     }
 
     const renderHorThumb = ({ style }: ThumbStyle) => {
-        const o: Pick<ThumbType, 'backgroundColor' | 'height' | 'borderRadius'> = {}
+        const o: Omit<ThumbType, 'width'> = {}
         if (backgroundColor) {
             o.backgroundColor = backgroundColor
         }
@@ -95,7 +95,7 @@ const ScrollbarC = ({
         }}></div>
     }
     const renderVerThumb = ({ style }: ThumbStyle) => {
-        const o: Pick<ThumbType, 'backgroundColor' | 'width' | 'borderRadius'> = {}
+        const o: Omit<ThumbType, 'height'> = {}
         if (backgroundColor) {
             o.backgroundColor = backgroundColor
         }
