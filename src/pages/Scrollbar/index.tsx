@@ -3,6 +3,26 @@ import styles from './index.module.scss'
 import * as Tiny from '~/components/Tinys'
 import ScrollbarC from '~/components/ScrollbarC'
 import Controller from '~/components/Controller'
+import { MdPreview } from 'md-editor-rt'
+
+const usageJSX = `
+\`\`\`jsx
+import ScrollbarC from '~/components/ScrollbarC'
+
+// jsx
+return <>
+    <ScrollbarC
+        thumbStyle={{
+            backgroundColor: 'pink',
+            width: 10,
+            borderRadius: 5,
+        }}
+    >
+        // Content
+    </ScrollbarC>
+</>
+\`\`\`
+`
 
 const Scrollbar = () => {
     return <div className={styles.scrollbar_wrap}>
@@ -41,7 +61,7 @@ const Scrollbar = () => {
                     <td>-</td>
                 </tr>
                 <tr>
-                    <td>滚动条的宽度</td>
+                    <td>滚动条的长度</td>
                     <td>thumbSize</td>
                     <td>number</td>
                     <td>-</td>
@@ -55,6 +75,11 @@ const Scrollbar = () => {
                 </tr>
             </tbody>
         </Controller>
+        <Tiny.TinyTitle2 title='如何使用' />
+        <MdPreview
+            modelValue={usageJSX}
+            showCodeRowNumber={true}
+        />
     </div>
 }
 
