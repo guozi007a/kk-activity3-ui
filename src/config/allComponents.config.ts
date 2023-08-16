@@ -12,14 +12,10 @@ const lotteryListImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*F
 const prixSwiperImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*KeyQQL5iKkkAAAAAAAAAAAAADrJ8AQ/original'
 const scrollBarImg = 'https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*TBTSR4PyVmkAAAAAAAAAAAAADrJ8AQ/original'
 
-interface ViewType<T> {
-    name: T
-    component: T
-    url: T
-    route: T
-}
+type ViewKeyType = 'name' | 'component' | 'url' | 'route'
+type ViewType = Record<ViewKeyType, string>
 
-export const viewComponents: ViewType<string>[] = [
+export const viewComponents: ViewType[] = [
     { name: '奖励预览列表', component: 'AwardPreviewList', url: awardPreviewListImg, route: 'award-preview-list' },
     { name: '弹出框', component: 'Popup', url: popupImg, route: 'popup' },
     { name: '滑动式时间标签页', component: 'SlidingDateTabs', url: slidingDateTabsImg, route: 'sliding-date-tabs' },
