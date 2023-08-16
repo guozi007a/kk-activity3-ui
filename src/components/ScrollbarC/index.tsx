@@ -13,6 +13,10 @@ interface PropsConfig {
     thumbStyle?: React.CSSProperties
 }
 
+interface ThumbStyle {
+    style: React.CSSProperties
+}
+
 const ScrollbarC = ({
     children,
     autoHide = true,
@@ -21,8 +25,8 @@ const ScrollbarC = ({
     thumbStyle,
 }: PropsConfig) => {
 
-    const renderThumb = () => {
-        return <div style={thumbStyle}></div>
+    const renderThumb = ({ style }: ThumbStyle) => {
+        return <div style={{ ...style, ...thumbStyle }}></div>
     }
     return <Scrollbars
         autoHide={autoHide}

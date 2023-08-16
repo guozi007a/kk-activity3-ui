@@ -32,7 +32,13 @@ const Scrollbar = () => {
         <Tiny.TinyText>依赖库<Tiny.TinyTag tag='react-custom-scrollbars-2' />。</Tiny.TinyText>
         <Tiny.TinyTitle2 title='效果展示' />
         <div className={styles.demo}>
-            <ScrollbarC>
+            <ScrollbarC
+                thumbStyle={{
+                    width: 10,
+                    backgroundColor: 'pink',
+                    borderRadius: 5,
+                }}
+            >
                 <div className={styles.demo_main}>滚动吧，骚年！</div>
             </ScrollbarC>
         </div>
