@@ -3,14 +3,13 @@
     
     .demo {
         position: relative;
-        width: 80rem;
-        height: 50rem;
+        width: 52rem;
+        height: 40rem;
         overflow: hidden;
 
         .demo_main {
-            width: 70rem;
+            width: 50rem;
             height: 100rem;
-            margin: auto;
             background-color: var(--blue-4);
         }
     }
