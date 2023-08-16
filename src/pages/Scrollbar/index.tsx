@@ -12,11 +12,8 @@ import ScrollbarC from '~/components/ScrollbarC'
 // jsx
 return <>
     <ScrollbarC
-        thumbStyle={{
-            backgroundColor: 'pink',
-            width: 10,
-            borderRadius: 5,
-        }}
+        thumbDim={10}
+        backgroundColor='pink'
     >
         // Content
     </ScrollbarC>
@@ -33,11 +30,8 @@ const Scrollbar = () => {
         <Tiny.TinyTitle2 title='效果展示' />
         <div className={styles.demo}>
             <ScrollbarC
-                thumbStyle={{
-                    width: 10,
-                    backgroundColor: 'pink',
-                    borderRadius: 5,
-                }}
+                thumbDim={10}
+                backgroundColor='pink'
             >
                 <div className={styles.demo_main}>滚动吧，骚年！</div>
             </ScrollbarC>
@@ -73,10 +67,17 @@ const Scrollbar = () => {
                     <td>-</td>
                 </tr>
                 <tr>
-                    <td>滚动条style样式</td>
-                    <td>thumbStyle</td>
-                    <td>React.CSSProperties</td>
-                    <td>null</td>
+                    <td>滚动条背景色</td>
+                    <td>backgroundColor</td>
+                    <td>string</td>
+                    <td>rgba(0, 0, 0, .2)</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>滚动条尺寸</td>
+                    <td>thumbDim</td>
+                    <td>number</td>
+                    <td>6</td>
                     <td>-</td>
                 </tr>
             </tbody>
