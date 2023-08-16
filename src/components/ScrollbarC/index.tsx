@@ -73,12 +73,7 @@ const ScrollbarC = ({
         }}></div>
     }
 
-    const defaultHorThumb = {
-        cursor: 'pointer',
-        borderRadius: 'inherit',
-        backgroundColor: 'rgba(0,0,0,.2)',
-    }
-    const defaultVerThumb = {
+    const defaultThumb = {
         cursor: 'pointer',
         borderRadius: 'inherit',
         backgroundColor: 'rgba(0,0,0,.2)',
@@ -95,7 +90,7 @@ const ScrollbarC = ({
         }
         return <div style={{
             ...style,
-            ...defaultHorThumb,
+            ...defaultThumb,
             ...o,
         }}></div>
     }
@@ -110,7 +105,7 @@ const ScrollbarC = ({
         }
         return <div style={{
             ...style,
-            ...defaultVerThumb,
+            ...defaultThumb,
             ...o,
         }}></div>
     }
